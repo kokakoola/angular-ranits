@@ -87,6 +87,9 @@ angular.module('ranitsApp')
       });
     };
 
+    $scope.users = ['Fabio', 'Leonardo', 'Thomas', 'Gabriele', 'Fabrizio', 'John', 'Luis', 'Kate', 'Max'];
+
+
   //   $scope.showAdd = function(ev) {
   //   $mdDialog.show({
   //     controller: DialogController,

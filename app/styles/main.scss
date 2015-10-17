@@ -1,3 +1,5 @@
+@import "../../bower_components/angular-material/angular-material.scss";
+@import "md-custom.scss";
 // bower:scss
 // endbower
 
@@ -93,9 +95,11 @@ body {
 
 $gray: #eee;
 
-md-content.md-default-theme {
+md-content.md-default-theme,
+body {
   background-color: $gray;
 }
+
 md-card {
   background-color: #fff;
   h2:first-of-type {
@@ -127,30 +131,7 @@ md-sidenav {
     top: 5px; // adjust for svg viewbox
   }
 }
-.user-avatar {
-  border-radius: 99%;
-}
 
 .md-button.md-fab {
   line-height: 1;
-}
-
-// push nav
-.md-sidenav-push-in {
-    // drawers
-    .md-sidenav-push-in-target {
-        transform: translate(0px);
-        // same as in md-sidenav.md-closed-add.md-closed-add-active, md-sidenav.md-closed-remove.md-closed-remove-active selector
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    &.md-sidenav-left-open {
-        .md-sidenav-push-in-target {
-            transform: translate(304px);
-        }
-    }
-    &.md-sidenav-right-open {
-        .md-sidenav-push-in-target {
-            transform: translate(-304px);
-        }
-    }
 }

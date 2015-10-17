@@ -18,17 +18,17 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMaterial',
-    'ngMdIcons'
+    'ngMdIcons',
   ])
   .config(function ($routeProvider, $mdThemingProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'IndexCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/add', {
+        templateUrl: 'views/add.html',
+        controller: 'AddCtrl'
       })
       .otherwise({
         redirectTo: '/'

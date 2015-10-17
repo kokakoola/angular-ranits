@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc function
- * @name ranitsApp.controller:MainCtrl
+ * @name ranitsApp.controller:IndexCtrl
  * @description
- * # MainCtrl
+ * # IndexCtrl
  * Controller of the ranitsApp
  */
 
 angular.module('ranitsApp')
- .controller('MainCtrl', function($scope, $mdSidenav){
+ .controller('IndexCtrl', function($scope, $mdSidenav){
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };

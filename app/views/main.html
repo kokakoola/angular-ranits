@@ -1,13 +1,45 @@
 <div ng-include="'views/common/toolbar-main.html'"></div>
-<section layout="row" flex>
-  <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/aside-left.html'">
-  </md-sidenav>
+<div class="md-layout-row layout-margin">
 
-  <!-- <div layout="column" class="relative" layout-fill role="main"> -->
+  <div flex="25" style="background: red;">
+   <md-list>
+     <md-list-item>
+       <md-button class="md-fab md-mini">
+         <div align="center">A</div>
+       </md-button>
+     </md-list-item>
+   </md-list>
+  </div>
+
+ <div flex style="background: blue;">
+   <md-content></md-content>
+ </div>
 
 
-    <!-- <div class='md-padding' layout="row" layout-wrap>
-      <md-card style="width: 250px;" ng-repeat="user in users">
+ <div flex="25" style="background: green;">
+   <md-list>
+     <md-list-item>
+       <md-button class="md-fab md-mini">
+          <div align="center">N</div>
+      </md-button>
+     </md-list-item>
+   </md-list>
+ </div>
+</div>
+
+<section layout="row"  layout-align="center start" >
+  <md-content layout="column" class="relative" layout-fill flex="66" role="main" style="background-color: yellow;">
+    <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showAdd($event)">
+      <ng-md-icon icon="add"></ng-md-icon>
+    </md-button>
+    <div layout="row" class="md-padding" >
+      <h3 class="md-display-1">Example with layout-wrap</h3>
+    </div>
+    <div layout="row" >
+      <p>Fixed width tiles. We agreed on meeting you don't want adaptive-width tiles.</p>
+    </div>
+    <div layout="row" class='md-padding'  layout-align="center start" layout-wrap>
+      <md-card style="width: 200px;" ng-repeat="user in users">
         <img src="http://placehold.it/150x100" class="md-card-image" alt="user avatar">
         <md-card-content>
           <h2>{{user}}</h2>
@@ -18,17 +50,15 @@
           <md-button>View</md-button>
         </div>
       </md-card>
-    </div> -->
-
-
-    <md-content md-scroll-y class="md-sidenav-push-in-target md-padding" layout="row" flex>
-      <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showAdd($event)">
-        <ng-md-icon icon="add"></ng-md-icon>
-      </md-button>
-      <!-- <div class="md-padding" layout="column">
-        <h1>Uusimad</h1>
-      </div> -->
-      <ui-view layout="row" layout-padding layout-wrap>
+    </div>
+    <div layout="row" class='md-padding'>
+      <h3 class="md-display-1">Example with flex</h3>
+    </div>
+    <div layout="row" >
+      <p>Fixed width tiles. We agreed on meeting you don't want adaptive-width tiles.</p>
+    </div>
+    <div layout="row" class='md-padding' layout-fill >
+      <ui-view layout="row" layout-padding flex>
         <md-card style="width: 250px;" ng-repeat="user in users">
           <img src="http://placehold.it/150x100" class="md-card-image" alt="user avatar">
           <md-card-content>
@@ -42,90 +72,95 @@
 
         </md-card>
       </ui-view>
-      <!-- <ui-view layout="column" layout-fill layout-padding>
-        <md-card flex-gt-sm="90" flex-gt-md="80">
-          <md-card-content>
+    </div>
+  </md-content>
 
-            <h2>Activity</h2>
-            <md-list>
-              <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
 
-              <md-item ng-repeat="item in activity | filter:search">
-                <md-item-content>
-                  <div class="md-tile-left inset" hide-sm>
-                      <user-avatar></user-avatar>
-                  </div>
-                  <div class="md-tile-content">
-                    <h3>{{item.what}}</h3>
-                    <h4>{{item.who}}</h4>
-                    <p>
-                      {{item.notes}}
-                    </p>
-                  </div>
-                </md-item-content>
-                <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-              </md-item>
-              <md-divider></md-divider>
-              <md-item layout class="inset">
-                  <md-button layout layout-align="start center" flex class="md-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
-                  </md-button>
-              </md-item>
-            </md-list>
-          </md-card-content>
-        </md-card>
-        <ng-switch on="data.selectedIndex" class="tabpanel-container">
+
+
+
+
+
+    <!-- <ui-view layout="column" layout-fill layout-padding>
+      <md-card flex-gt-sm="90" flex-gt-md="80">
+        <md-card-content>
+
+          <h2>Activity</h2>
+          <md-list>
+            <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
+
+            <md-item ng-repeat="item in activity | filter:search">
+              <md-item-content>
+                <div class="md-tile-left inset" hide-sm>
+                    <user-avatar></user-avatar>
+                </div>
+                <div class="md-tile-content">
+                  <h3>{{item.what}}</h3>
+                  <h4>{{item.who}}</h4>
+                  <p>
+                    {{item.notes}}
+                  </p>
+                </div>
+              </md-item-content>
+              <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+              <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+            </md-item>
+            <md-divider></md-divider>
+            <md-item layout class="inset">
+                <md-button layout layout-align="start center" flex class="md-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
+                </md-button>
+            </md-item>
+          </md-list>
+        </md-card-content>
+      </md-card>
+      <ng-switch on="data.selectedIndex" class="tabpanel-container">
+      <div role="tabpanel"
+       id="tab1-content"
+       aria-labelledby="tab1"
+       ng-switch-when="0"
+       md-swipe-left="next()"
+       md-swipe-right="previous()"
+       layout="row" layout-align="center center">
+        </div>
         <div role="tabpanel"
-         id="tab1-content"
-         aria-labelledby="tab1"
-         ng-switch-when="0"
-         md-swipe-left="next()"
-         md-swipe-right="previous()"
-         layout="row" layout-align="center center">
-    </div>
-    <div role="tabpanel"
-         id="tab2-content"
-         aria-labelledby="tab2"
-         ng-switch-when="1"
-         md-swipe-left="next()"
-         md-swipe-right="previous()"
-         layout="row" layout-align="center center">
-        <md-card flex-gt-sm="90" flex-gt-md="80">
-          <md-card-content>
-            <h2>Favorites</h2>
-            <md-list>
-              <md-item ng-repeat="item in activity | filter:search | orderBy:'-what'">
-                <md-item-content>
-                  <div class="md-tile-left inset" hide-sm>
-                      <user-avatar></user-avatar>
-                  </div>
-                  <div class="md-tile-content">
-                    <h3>{{item.what}}</h3>
-                    <h4>{{item.who}}</h4>
-                    <p>
-                      {{item.notes}}
-                    </p>
-                  </div>
-                </md-item-content>
-                <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-              </md-item>
-              <md-divider></md-divider>
-              <md-item layout class="inset">
-                  <md-button layout layout-align="start center" flex class="md-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
-                  </md-button>
-              </md-item>
-            </md-list>
-          </md-card-content>
-        </md-card>
-    </div>
-    </ng-switch>
-      </ui-view> -->
-      <!-- <md-button class="btn1" ng-click="acceptOffer();"> Accept </md-button> -->
-
-    </md-content>
-    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="right" md-is-locked-open="$mdMedia('gt-sm')" ng-include="'views/common/aside-left.html'">
-    </md-sidenav>
+       id="tab2-content"
+       aria-labelledby="tab2"
+       ng-switch-when="1"
+       md-swipe-left="next()"
+       md-swipe-right="previous()"
+       layout="row" layout-align="center center">
+      <md-card flex-gt-sm="90" flex-gt-md="80">
+        <md-card-content>
+          <h2>Favorites</h2>
+          <md-list>
+            <md-item ng-repeat="item in activity | filter:search | orderBy:'-what'">
+              <md-item-content>
+                <div class="md-tile-left inset" hide-sm>
+                    <user-avatar></user-avatar>
+                </div>
+                <div class="md-tile-content">
+                  <h3>{{item.what}}</h3>
+                  <h4>{{item.who}}</h4>
+                  <p>
+                    {{item.notes}}
+                  </p>
+                </div>
+              </md-item-content>
+              <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+              <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+            </md-item>
+            <md-divider></md-divider>
+            <md-item layout class="inset">
+                <md-button layout layout-align="start center" flex class="md-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
+                </md-button>
+            </md-item>
+          </md-list>
+        </md-card-content>
+      </md-card>
+        </div>
+        </ng-switch>
+    </ui-view> -->
+    <div ng-include="'views/common/aside-right.html'" class="aside-right" flex="25"></div>
 </section>

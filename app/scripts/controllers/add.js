@@ -28,16 +28,6 @@ angular.module('ranitsApp')
       icon: 'message'
     }
   ];
-  $scope.links = [
-    {
-      href : '#/add',
-      name: 'Lisa kogumik'
-    },
-    {
-      href : '#/',
-      name: 'Algus'
-    }
-  ];
 
     $scope.users = ['Fabio', 'Leonardo', 'Thomas', 'Gabriele', 'Fabrizio', 'John', 'Luis', 'Kate', 'Max'];
 

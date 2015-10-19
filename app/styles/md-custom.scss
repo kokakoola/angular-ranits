@@ -11,7 +11,7 @@
 // Typography
 // ------------------------------
 $font-family: Roboto, 'Helvetica Neue', sans-serif !default;
-$font-size:   10px;
+$font-size:   12px;
 
 $display-4-font-size-base: rem(11.20) !default;
 $display-3-font-size-base: rem(5.600) !default;
@@ -258,8 +258,8 @@ $button-fab-padding: rem(1.60) !default;
 
 html, body {
   height: 100%;
-  color: rgba(0,0,0,0.87);
-  background: white;
+  color: rgba(0,0,0,0.77); // rgba(0,0,0,0.87) ranits v.1
+  background: #eee; // white ranits
   position: relative;
 }
 
@@ -4434,7 +4434,7 @@ md-optgroup {
   }
 }
 
-$sidenav-default-width: 204px; // 304px
+$sidenav-default-width: 232px; // 304px ranits
 $sidenav-min-space: 56px !default;
 
 md-sidenav {

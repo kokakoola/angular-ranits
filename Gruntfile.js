@@ -427,7 +427,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
-      'autoprefixer:server',
+      // 'autoprefixer:server',
       'connect:livereload',
       'watch'
     ]);
@@ -465,12 +465,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint'
+    'newer:jshint',
+    // 'test',
+    'build'
   ]);
-
-  // grunt.registerTask('default', [
-  //   'newer:jshint',
-  //   'test',
-  //   'build'
-  // ]);
 };

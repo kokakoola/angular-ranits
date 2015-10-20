@@ -1,103 +1,46 @@
 <!-- style="background-color: yellow;" -->
 <div ng-include="'views/common/toolbar-main.html'"></div>
-<!-- <div class="md-layout-row layout-margin">
-
-<div flex="25" style="background: red;">
-<md-list>
-<md-list-item>
-<md-button class="md-fab md-mini">
-<div align="center">A</div>
-</md-button>
-</md-list-item>
-</md-list>
-</div>
-
-<div flex style="background: blue;">
-<md-content></md-content>
-</div>
-
-
-<div flex="25" style="background: green;">
-<md-list>
-<md-list-item>
-<md-button class="md-fab md-mini">
-<div align="center">N</div>
-</md-button>
-</md-list-item>
-</md-list>
-</div>
-</div> -->
 
 <section layout="row" layout-align="center start"  ng-controller="MainCtrl" ng-cloak>
   <!-- Round Fab-button -->
   <!-- ////////////////////////- -->
-  <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showAdd($event)">
+<div ng-controller="DialogCtrl">
+  <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showAdvanced($event)">
     <md-tooltip>
       Lisa materjal
     </md-tooltip>
     <ng-md-icon icon="add"></ng-md-icon>
   </md-button>
+</div>
 
   <!-- Left sidenav -->
   <!-- ////////////////////////- -->
   <!-- <md-sidenav  layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/aside-left.html'">
-  </md-sidenav> -->
+</md-sidenav> -->
 
-  <article flex="100" flex-gt-sm="90"  layout="row" layout-sm="column">
-    <md-content layout="column" layout-padding flex="75" flex-sm="100" role="main">
-      <div layout="column">
-        <h3 class="inset">Uusimad</h3>
-        <p class="inset ">layout-wrap, flex, flex-sm, flex-md</p>
-      </div>
-
-      <!-- Cards -->
-      <!-- ////////////////////////- -->
-      <div layout="row" layout-align="space-between start" layout-wrap>
-        <md-card class="md-whiteframe-4dp" flex="20" flex-sm="45" flex-md="30"  ng-repeat="user in users | filter: query | orderBy: user | limitTo: 4">
-          <img src="http://placehold.it/150x100" class="md-card-image" alt="user avatar">
-          <md-card-content>
-            <h2 class="md-title">{{user}}</h2>
-            <p class="md-caption ">Külli Relve, Helle Järvalt, Aiki Jõgeva, Merike Kilk, Mare Toom, Edith Maasik, Ene Lehtmets, Ana Valdmann, Anu Parts, Mari Uudelt</p>
-          </md-card-content>
-          <md-divider></md-divider>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button>Save</md-button>
-            <md-button>View</md-button>
-          </div>
-        </md-card>
-      </div>
-
-      <!-- Showmore -->
-      <!-- ////////////////////////- -->
-      <div layout="row" layout-align="end-center" class="md-padding">
-        <md-button class="md-primary">
-          <ng-md-icon icon="arrow_forward"> </ng-md-icon>
-          Veel
-        </md-button>
-      </div>
-      <!-- <div layout="row" class='md-padding'>
-      <h3 class="md-display-1">Example with flex</h3>
+<!-- Middle content -->
+<!-- ////////////////////////- -->
+<article flex="100" flex-gt-sm="80"  layout="row " layout-sm="column">
+  <md-content layout="column" layout-padding flex="75" flex-sm="100" role="main">
+    <div layout="column">
+      <h3 class="inset">Uusimad</h3>
+      <p class="inset ">layout-wrap, flex, flex-sm, flex-md</p>
     </div>
-    <div layout="row" >
-    <p>Fixed width tiles. We agreed on meeting you don't want adaptive-width tiles.</p>
-  </div>
-  <div layout="row" class='md-padding' layout-fill >
-  <ui-view layout="row" layout-padding flex>
-  <md-card style="width: 250px;" ng-repeat="user in users">
-  <img src="http://placehold.it/150x100" class="md-card-image" alt="user avatar">
-  <md-card-content>
-  <h2>{{user}}</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-</md-card-content>
-<div class="md-actions" layout="row" layout-align="end center">
-<md-button>Save</md-button>
-<md-button>View</md-button>
-</div>
-</md-card>
-</ui-view>
-</div> -->
-</md-content>
 
-<div ng-include="'views/common/aside-right.html'" class="aside-right" flex="25" flex-sm="100" style="background: green;"></div>
+    <!-- Cards -->
+    <!-- ////////////////////////- -->
+    <div layout="row" layout-align="space-between start" layout-wrap ng-include="'views/common/card-repeat.html'">
+    </div>
+
+    <!-- Showmore -->
+    <!-- ////////////////////////- -->
+    <div layout="row" layout-align="end-center" class="md-padding">
+      <md-button class="md-primary">
+        <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
+      </md-button>
+    </div>
+  </md-content>
+
+  <div ng-include="'views/common/aside-right.html'" class="aside-right" flex="25" flex-sm="100"></div>
 </article>
 </section>

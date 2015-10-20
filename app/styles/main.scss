@@ -10,19 +10,11 @@
   padding: 0.2em 0;
 }
 
-.container {
-  max-width: 90%;
-}
+// .container {
+//   max-width: 90%;
+// }
 
 // Overrides to the material design scss
-
-// Getting Started md
-
-md-list md-list-item.md-3-line .md-list-item-text p {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
 $gray: #eee;
 
@@ -31,38 +23,72 @@ body {
   background-color: $gray;
 }
 
+// Right sidebar list
+md-list md-list-item.md-3-line .md-list-item-text p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Topbar
+.logo-lg img {
+  position: absolute;
+}
+
+// Card
 md-card {
   background-color: #fff;
   h2:first-of-type {
     margin-top: 0;
   }
 }
-md-toolbar {
-  .md-button.md-default-theme {
-    border-radius: 99%; // round toolbar buttons
-  }
-}
-h2 {
-  font-weight: 400;
-}
-.md-toolbar-tools-bottom {
-  font-size: small;
-  & :last-child {
-    opacity: 0.8;
-  }
-}
-md-toolbar:not(.md-hue-1),
-.md-fab {
-  fill: #fff;
-}
-md-sidenav {
-  fill: #737373;
-  ng-md-icon {
-    position: relative;
-    top: 5px; // adjust for svg viewbox
-  }
-}
+// md-toolbar {
+//   .md-button.md-default-theme {
+//     border-radius: 99%;
+//   }
+// }
+// h2 {
+//   font-weight: 400;
+// }
+// .md-toolbar-tools-bottom {
+//   font-size: small;
+//   & :last-child {
+//     opacity: 0.8;
+//   }
+// }
+// md-toolbar:not(.md-hue-1),
+// .md-fab {
+//   fill: #fff;
+// }
+// md-sidenav {
+//   fill: #737373;
+//   ng-md-icon {
+//     position: relative;
+//     top: 5px;
+//   }
+// }
 
-.md-button.md-fab {
-  line-height: 1;
+// .md-button.md-fab {
+//   line-height: 1;
+// }
+.md-backdrop {
+  display: none !important;
 }
+// .md-sidenav-push-in {
+//     // drawers
+//     .md-sidenav-push-in-target {
+//         transform: translate(0px);
+//         // same as in md-sidenav.md-closed-add.md-closed-add-active, md-sidenav.md-closed-remove.md-closed-remove-active selector
+//         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+//     }
+//     &.md-sidenav-left-open {
+//         .md-sidenav-push-in-target {
+//             transform: translate(0px);
+//         }
+//     }
+//     &.md-sidenav-right-open {
+//         .md-sidenav-push-in-target {
+//             transform: translate(-232px);
+//         }
+//     }
+// }

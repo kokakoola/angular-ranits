@@ -1,0 +1,12 @@
+<md-card class="md-whiteframe-4dp" flex flex-sm="45" flex-md="45"  ng-repeat="user in users | filter: query | orderBy: user | limitTo: 4">
+  <img src="http://placehold.it/150x100" class="md-card-image" alt="book cover">
+  <md-card-content>
+    <h2 class="md-title">{{user}}</h2>
+    <p class="md-caption ">Külli Relve, Helle Järvalt, Aiki Jõgeva, Merike Kilk, Mare Toom, Edith Maasik, Ene Lehtmets, Ana Valdmann, Anu Parts, Mari Uudelt</p>
+  </md-card-content>
+  <md-divider></md-divider>
+  <div class="md-actions" layout="row" layout-align="end center">
+    <md-button>Save</md-button>
+    <md-button>View</md-button>
+  </div>
+</md-card>

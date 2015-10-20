@@ -45,7 +45,9 @@ angular
         'default': '500',
         'hue-1': '50'
       })
-      .accentPalette('pink');
+      .accentPalette('purple',  {
+      'default': '500'
+    });
       $mdThemingProvider.theme('input', 'default')
       .primaryPalette('grey')
 

@@ -1,8 +1,16 @@
-<md-toolbar ng-show="!showSearch">
+<md-toolbar class="md-accent" ng-show="!showSearch" ng-controller="LeftCtrl">
   <div flex="100" flex-gt-sm="90"  layout="row " layout-sm="column">
     <div class="md-toolbar-tools" flex="100" flex-gt-sm="90"  layout="row " layout-sm="column">
-      <div flex="15" layout layout-align="center center" class="logo-lg">
-        <img src="images/logo_white.svg" alt="">
+      <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+        <ng-md-icon icon="menu"></ng-md-icon>
+      </md-button>
+      <!-- <md-button ng-click="toggleLeft()" hide-gt-md aria-label="Menu">
+        <ng-md-icon icon="menu"></ng-md-icon>
+      </md-button> -->
+      <div layout layout-align="center center" class="logo-lg">
+        <md-button aria-label="home" ng-href="./#/" flex flex-md="100">
+          <img src="images/logo_white.svg" alt="" >
+        </md-button>
       </div>
       <span flex></span>
       <md-button aria-label="Search" ng-click="showSearch = !showSearch">

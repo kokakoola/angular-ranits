@@ -1,72 +1,71 @@
 <!-- style="background-color: yellow;" -->
 <div ng-include="'views/common/toolbar-add.html'"></div>
 
-<div layout="row" ng-controller="DialogCtrl">
-  <!-- Left sidenav -->
-  <!-- ////////////////////////- -->
-  <md-sidenav sidenav-push-in layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/aside-left.html'">
-  </md-sidenav>
+<!-- Left sidenav -->
+<!-- ////////////////////////- -->
 
-  <section layout="row" layout-align="start start"  class="md-sidenav-push-in-target" ng-controller="MainCtrl" ng-cloak>
-    <!-- Round Fab-button -->
-    <!-- ////////////////////////- -->
-    <!-- <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="openBottomSheet()">
+
+<section layout="row" layout-align="start start"  class="md-sidenav-push-in-target" ng-controller="MainCtrl" ng-cloak>
+  <md-sidenav sidenav-push-in layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/sidenav-left.html'">
+  </md-sidenav>
+  <!-- Round Fab-button -->
+  <!-- ////////////////////////- -->
+  <!-- <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="openBottomSheet()">
+    <md-tooltip>
+      Bottom sheet
+    </md-tooltip>
+    <ng-md-icon icon="add"></ng-md-icon>
+  </md-button> -->
+  <md-button class="md-fab md-primary md-fab-bottom-right" aria-label="Back" ng-href="/#/">
+    <md-tooltip>
+      Katkesta
+    </md-tooltip>
+    <ng-md-icon icon="arrow_back"></ng-md-icon>
+  </md-button>
+  <!-- <div ng-controller="DialogCtrl">
+    <md-button class="md-fab md-fab-top-right" aria-label="Add" ng-click="showAdd($event)">
       <md-tooltip>
-        Bottom sheet
+        Lisa materjal
       </md-tooltip>
       <ng-md-icon icon="add"></ng-md-icon>
-    </md-button> -->
-    <md-button class="md-fab md-primary md-fab-bottom-right" aria-label="Back" ng-href="/#/">
-      <md-tooltip>
-        Katkesta
-      </md-tooltip>
-      <ng-md-icon icon="arrow_back"></ng-md-icon>
     </md-button>
-    <!-- <div ng-controller="DialogCtrl">
-      <md-button class="md-fab md-fab-top-right" aria-label="Add" ng-click="showAdd($event)">
-        <md-tooltip>
-          Lisa materjal
-        </md-tooltip>
-        <ng-md-icon icon="add"></ng-md-icon>
-      </md-button>
-    </div> -->
-    <div ng-if="alert">
-      <br/>
-      <b layout="row" layout-align="center center" class="md-padding">
-        {{alert}}
-      </b>
-    </div>
+  </div> -->
+  <div ng-if="alert">
+    <br/>
+    <b layout="row" layout-align="center center" class="md-padding">
+      {{alert}}
+    </b>
+  </div>
 
-    <!-- Middle content -->
-    <!-- ////////////////////////- -->
-    <article flex="100" flex-gt-sm="80"  flex-gt-md="80" layout="row " layout-sm="column">
-      <md-content layout="column" layout-padding flex="75" flex-sm="100" role="main">
-        <div layout="column">
-          <p class="inset">Meie metaandmed, mis on edukalt sisestatud modaalis, on siin näha</p>
-        </div>
-        <div layout="column">
-          <h3 class="inset">Uusimad</h3>
-          <!-- <md-button ng-click="close()" class="md-primary" hide-sm="">
-        Close
-      </md-button> -->
-          <p class="inset ">layout-wrap, flex, flex-sm, flex-md</p>
-        </div>
+  <!-- Middle content -->
+  <!-- ////////////////////////- -->
+  <article flex="100" flex-gt-sm="80"  flex-gt-md="80" layout="row " layout-sm="column">
+    <md-content layout="column" layout-padding flex="75" flex-sm="100" role="main">
+      <div layout="column">
+        <p class="inset">Meie metaandmed, mis on edukalt sisestatud modaalis, on siin näha</p>
+      </div>
+      <div layout="column">
+        <h3 class="inset">Uusimad</h3>
+        <!-- <md-button ng-click="close()" class="md-primary" hide-sm="">
+      Close
+    </md-button> -->
+        <p class="inset ">layout-wrap, flex, flex-sm, flex-md</p>
+      </div>
 
-        <!-- Cards -->
-        <!-- ////////////////////////- -->
-        <div layout="row" layout-align="space-between start" layout-wrap ng-include="'views/common/card-repeat.html'">
-        </div>
+      <!-- Cards -->
+      <!-- ////////////////////////- -->
+      <div layout="row" layout-align="space-between start" layout-wrap ng-include="'views/common/card-repeat.html'">
+      </div>
 
-        <!-- Showmore -->
-        <!-- ////////////////////////- -->
-        <div layout="row" layout-align="end-center" class="md-padding">
-          <md-button class="md-primary">
-            <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
-          </md-button>
-        </div>
-      </md-content>
+      <!-- Showmore -->
+      <!-- ////////////////////////- -->
+      <div layout="row" layout-align="end-center" class="md-padding">
+        <md-button class="md-primary">
+          <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
+        </md-button>
+      </div>
+    </md-content>
 
-      <div ng-include="'views/common/aside-right.html'" class="aside-right" flex="25" flex-sm="100"></div>
-    </article>
-</div>
+    <div ng-include="'views/common/aside-right.html'" class="aside-right" flex="25" flex-sm="100"></div>
+  </article>
 </section>

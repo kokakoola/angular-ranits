@@ -8,28 +8,13 @@
  * Controller of the ranitsApp
  */
 
+
+
 angular.module('ranitsApp')
  .controller('MainCtrl', function($scope){
   // $scope.toggleSidenav = function(menuId) {
   //   $mdSidenav(menuId).toggle();
   // };
-  //
-  // $scope.currentPath = $location.path();
-  //
-  // $scope.links = [
-  //   {
-  //     href : '#/add',
-  //     name: 'Lisa kogumik'
-  //   },
-  //   {
-  //     href : '#/',
-  //     name: 'Algus'
-  //   }
-  // ];
-
-  $scope.model = {
-  chips: ["Item1", "Item2"]
-  },
 
   $scope.messages = [{
       what: 'Geograafia õpik gümnaasiumile, III kursus. Maailma ühiskonnageograafia. Loodusvarade majandamine ja keskkonnaprobleemid',
@@ -58,7 +43,7 @@ angular.module('ranitsApp')
       notes: "Söömine on inimese elu alus. Puudujäägid ja liialdused "
     }];
 
-    $scope.users = ['Fabio', 'Leonardo', 'Thomas', 'Gabriele', 'Fabrizio', 'John', 'Luis', 'Kate', 'Max'];
+
 })
 .controller('DialogCtrl', function($scope, $mdDialog) {
 
@@ -77,12 +62,6 @@ angular.module('ranitsApp')
         .targetEvent(ev)
     );
   };
-  $scope.angulars = [
-      'angular 1.0',
-      'angular 1.2',
-      'angular 1.4',
-      'angular 2.0'
-  ];
 
   $scope.showConfirm = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app
@@ -103,6 +82,18 @@ angular.module('ranitsApp')
     $mdDialog.show({
       controller: DialogController,
       templateUrl: 'views/templates/dialogMeta.tmpl.html',
+      targetEvent: ev,
+    })
+    .then(function(cancel) {
+      $mdDialog.hide();
+    }, function() {
+      // $scope.alert = 'You cancelled the dialog.';
+    });
+  };
+  $scope.showLogin = function(ev) {
+    $mdDialog.show({
+      controller: MainController,
+      templateUrl: 'views/templates/dialogLogin.tmpl.html',
       targetEvent: ev,
     })
     .then(function(cancel) {

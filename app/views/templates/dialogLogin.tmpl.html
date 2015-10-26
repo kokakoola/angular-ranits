@@ -1,0 +1,103 @@
+<md-dialog aria-label="Login" class="dialog-cover" flex="100">
+  <md-toolbar class="md-hue-1">
+    <div class="md-toolbar-tools">
+      <md-button ng-click="cancel()" aria-label="close">
+        <ng-md-icon icon="close"></ng-md-icon>
+      </md-button>
+      <h2>Sisene</h2>
+      <span flex></span>
+
+    </div>
+  </md-toolbar>
+  <form>
+    <div layout="row" layout-align="center start" >
+      <div flex-gt-sm="80"   layout-align="center start" layout="row " layout-sm="column">
+        <md-content flex="80">
+          <form name="">
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <label>Pealkiri</label> <input placeholder="Näiteks: Bioloogia töövihik">
+              </md-input-container>
+              <div layout="column" layout-align="center center">
+                <md-input-container>
+                  <label>Keel</label>
+                  <md-select ng-model="ctrl.angular">
+                    <md-option ng-repeat="angular in ctrl.angulars" value="{{angulars}}">{{angulars}}</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+            </div>
+
+            <md-input-container flex>
+              <label>Kirjeldus (valikuline)</label>
+              <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+            </md-input-container>
+            <md-input-container flex>
+                 <md-chips ng-model="model.chips" delete-button-label="Eemalda märksõna" delete-hint="Vajuta x märksõna kustutamiseks" secondary-placeholder="Lisa märksõna (valikuline)">
+                 </md-chips>
+            </md-input-container>
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <label>Autorid</label>
+                <input >
+              </md-input-container>
+              <md-input-container flex>
+                <label>Kirjastaja</label>
+                <input >
+              </md-input-container>
+            </div>
+          </form>
+        </md-content>
+      </div>
+    </div>
+    <div class="md-actions" flex-gt-sm="80"   layout-align="center start" layout="row " layout-sm="column">
+    <span flex></span>
+    <!-- <md-button ng-click="cancel()">
+      Katkesta
+    </md-button> -->
+    <md-button ng-click="cancel()" ng-href="#/add" class="md-primary">
+      <ng-md-icon icon="arrow_forward"> </ng-md-icon> Jätka
+    </md-button>
+  </div>
+</form>
+</md-dialog>
+
+<!-- <md-dialog aria-label="Mango (Fruit)">
+<md-content class="md-padding">
+<form name="userForm"> <div layout layout-sm="column">
+<md-input-container flex>
+<label>First Name</label> <input ng-model="user.firstName" placeholder="Placeholder text">
+</md-input-container> <md-input-container flex>
+<label>Last Name</label>
+<input ng-model="theMax">
+</md-input-container>
+</div>
+<md-input-container flex>
+<label>Address</label>
+<input ng-model="user.address">
+</md-input-container>
+<div layout layout-sm="column">
+<md-input-container flex>
+<label>City</label>
+<input ng-model="user.city">
+</md-input-container>
+<md-input-container flex>
+<label>State</label>
+<input ng-model="user.state">
+</md-input-container>
+<md-input-container flex>
+<label>Postal Code</label>
+<input ng-model="user.postalCode">
+</md-input-container> </div>
+<md-input-container flex>
+<label>Biography</label>
+<textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+</md-input-container>
+</form>
+</md-content>
+<div class="md-actions" layout="row">
+<span flex></span>
+<md-button ng-click="answer(\'not useful\')"> Cancel </md-button>
+<md-button ng-click="answer(\'useful\')" class="md-primary"> Save </md-button>
+</div>
+</md-dialog> -->

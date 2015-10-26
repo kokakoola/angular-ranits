@@ -1,39 +1,39 @@
-<md-toolbar ng-show="!showSearch">
-  <div class="md-toolbar-tools"  layout-align="center start"  flex="80"   layout="row" layout-sm="column">
-    <div flex="100" flex-gt-md="15" layout layout-align="center center" class="logo-lg">
-    </div>
-    <span flex></span>
-    <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-      <ng-md-icon icon="search"></ng-md-icon>
-    </md-button>
-    <md-button aria-label="Login" class="md-icon-button"  ng-click="showListBottomSheet($event)">
-      <ng-md-icon icon="lock"></ng-md-icon>
-      <md-tooltip>
-        Sisene
-      </md-tooltip>
-    </md-button>
-  </div>
-
-  <!-- <md-menu>
-    <md-button aria-label="Open language menu" class="md-icon-button" ng-mouseenter="ctrl.openMenu($mdOpenMenu, $event)">
-      ET</md-icon>
-    </md-button>
-    <md-menu-content width="4">
-      <md-menu-item>
-        <md-button >
-
+<md-toolbar ng-show="!showSearch"  >
+  <div layout-align="center start"  layout="row" layout-sm="column">
+    <div class="md-toolbar-tools" flex="80">
+      <div flex="100" flex-gt-md="15" layout="row" layout-align="center center" class="logo-lg"></div>
+      <span flex></span>
+      <md-button aria-label="Search" class="md-icon-button" ng-click="showSearch = !showSearch">
+        <ng-md-icon icon="search"></ng-md-icon>
+      </md-button>
+      <md-button aria-label="Login" class="md-icon-button"  ng-click="showLogin($event)">
+        <ng-md-icon icon="lock"></ng-md-icon>
+        <md-tooltip>Sisene</md-tooltip>
+      </md-button>
+      <md-menu>
+        <md-button aria-label="Open language menu" class="md-icon-button" ng-mouseenter="ctrl.openMenu($mdOpenMenu, $event)">
           ET
         </md-button>
-      </md-menu-item>
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button >
 
-      <md-menu-divider></md-menu-divider>
-      <md-menu-item>
-        <md-button>
-          EN
-        </md-button>
-      </md-menu-item>
-    </md-menu-content>
-  </md-menu> -->
+              ET
+            </md-button>
+          </md-menu-item>
+
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button>
+              EN
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+  </div>
+
+
 </md-toolbar>
 
 <md-toolbar class="md-hue-1" ng-show="showSearch">
@@ -49,8 +49,8 @@
     <md-button aria-label="Search" ng-click="showSearch = !showSearch">
       <ng-md-icon icon="search"></ng-md-icon>
     </md-button>
-    <h3 flex="10">Lisa filter</h3>
-    <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
+    <h3 flex="10">Kasuta filtrit</h3>
+    <md-button aria-label="Open Settings">
       <ng-md-icon icon="filter_list"></ng-md-icon>
     </md-button>
 

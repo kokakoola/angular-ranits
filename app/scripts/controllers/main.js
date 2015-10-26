@@ -27,6 +27,10 @@ angular.module('ranitsApp')
   //   }
   // ];
 
+  $scope.model = {
+  chips: ["Item1", "Item2"]
+  },
+
   $scope.messages = [{
       what: 'Geograafia õpik gümnaasiumile, III kursus. Maailma ühiskonnageograafia. Loodusvarade majandamine ja keskkonnaprobleemid',
       who: 'Sulev Mäeltsemees',
@@ -54,11 +58,10 @@ angular.module('ranitsApp')
       notes: "Söömine on inimese elu alus. Puudujäägid ja liialdused "
     }];
 
-
     $scope.users = ['Fabio', 'Leonardo', 'Thomas', 'Gabriele', 'Fabrizio', 'John', 'Luis', 'Kate', 'Max'];
-
 })
 .controller('DialogCtrl', function($scope, $mdDialog) {
+
   $scope.alert = '';
   $scope.showAlert = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app
@@ -74,6 +77,13 @@ angular.module('ranitsApp')
         .targetEvent(ev)
     );
   };
+  $scope.angulars = [
+      'angular 1.0',
+      'angular 1.2',
+      'angular 1.4',
+      'angular 2.0'
+  ];
+
   $scope.showConfirm = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
@@ -101,7 +111,9 @@ angular.module('ranitsApp')
       // $scope.alert = 'You cancelled the dialog.';
     });
   };
+
 });
+
 function DialogController($scope, $mdDialog) {
   $scope.hide = function() {
     $mdDialog.hide();
@@ -112,4 +124,13 @@ function DialogController($scope, $mdDialog) {
   $scope.answer = function(answer) {
     $mdDialog.hide(answer);
   };
+  $scope.model = {
+    chips: ["Item1", "Item2"]
+  };
+  $scope.angulars = [
+    'angular 1.0',
+    'angular 1.2',
+    'angular 1.4',
+    'angular 2.0'
+  ];
 };

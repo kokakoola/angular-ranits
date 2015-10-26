@@ -1,5 +1,5 @@
 @import "../../bower_components/angular-material/angular-material.scss";
-@import "md-custom.scss";
+// @import "md-custom.scss";
 // bower:scss
 // endbower
 
@@ -10,18 +10,28 @@
   padding: 0.2em 0;
 }
 
-// .container {
-//   max-width: 90%;
-// }
+.logo-lg {
+  background-image: url('../images/logo_white.svg');
+  margin-top: 5px;
+  background-size: contain;
+  height: 35px;
+  background-repeat: no-repeat;
+}
+
+
+  .md-dialog-container {
+    align-items: flex-start;
+  }
+  md-dialog {
+    border-radius: 0;
+  }
+
+  .md-actions {
+    padding-bottom: 30px;
+  }
 
 // Overrides to the material design scss
 
-$gray: #eee;
-
-md-content.md-default-theme,
-body {
-  background-color: $gray;
-}
 
 // Right sidebar list
 md-list md-list-item.md-3-line .md-list-item-text p {
@@ -71,9 +81,7 @@ md-card {
 // .md-button.md-fab {
 //   line-height: 1;
 // }
-.md-backdrop {
-  display: none !important;
-}
+
 // .md-sidenav-push-in {
 //     // drawers
 //     .md-sidenav-push-in-target {

@@ -1,4 +1,4 @@
-<md-card class="md-whiteframe-4dp" flex flex-sm="45" flex-md="45"  ng-repeat="user in users | filter: query | orderBy: user | limitTo: 4">
+<md-card class="md-whiteframe-4dp" flex-gt-sm="45" flex-md="40" flex-gt-md="30" flex-lg="20" ng-repeat="user in users | filter: query | orderBy: user | limitTo: 4">
   <img src="http://placehold.it/150x100" class="md-card-image" alt="book cover">
   <md-card-content>
     <h2 class="md-title">{{user}}</h2>

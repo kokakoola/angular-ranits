@@ -43,7 +43,10 @@ angular.module('ranitsApp')
       notes: "Söömine on inimese elu alus. Puudujäägid ja liialdused "
     }];
 
-
+})
+.controller('ToggleCtrl', function($scope) {
+  // set the default states for lions and cranes
+  $scope.lions = false;
 })
 .controller('DialogCtrl', function($scope, $mdDialog) {
 
@@ -92,7 +95,7 @@ angular.module('ranitsApp')
   };
   $scope.showLogin = function(ev) {
     $mdDialog.show({
-      controller: MainController,
+      controller: DialogController,
       templateUrl: 'views/templates/dialogLogin.tmpl.html',
       targetEvent: ev,
     })
@@ -105,18 +108,16 @@ angular.module('ranitsApp')
 
 });
 
-function DialogController($scope, $mdDialog) {
+function DialogController($scope, $mdDialog, $location) {
   $scope.hide = function() {
     $mdDialog.hide();
   };
-  $scope.cancel = function() {
+  $scope.forward = function(target) {
     $mdDialog.cancel();
-  };
-  $scope.answer = function(answer) {
-    $mdDialog.hide(answer);
+    $location.path(target);
   };
   $scope.model = {
-    chips: ["Item1", "Item2"]
+    chips: ['Item1', 'Item2']
   };
   $scope.angulars = [
     'angular 1.0',
@@ -124,4 +125,4 @@ function DialogController($scope, $mdDialog) {
     'angular 1.4',
     'angular 2.0'
   ];
-};
+}

@@ -6,9 +6,8 @@
       <md-button aria-label="Search" class="md-icon-button" ng-click="showSearch = !showSearch">
         <ng-md-icon icon="search"></ng-md-icon>
       </md-button>
-      <md-button aria-label="Login" class="md-icon-button"  ng-click="showLogin($event)">
-        <ng-md-icon icon="lock"></ng-md-icon>
-        <md-tooltip>Sisene</md-tooltip>
+      <md-button aria-label="User profile" class="md-icon-button">
+        <ng-md-icon icon="account_circle"></ng-md-icon>
       </md-button>
       <md-menu>
         <md-button aria-label="Open language menu" class="md-icon-button" ng-mouseenter="ctrl.openMenu($mdOpenMenu, $event)">
@@ -34,7 +33,7 @@
   </div>
 </md-toolbar>
 
-<md-toolbar class="md-hue-1" ng-show="showSearch" ng-controller="ToggleCtrl">
+<md-toolbar class="md-hue-1" ng-show="showSearch" >
   <div layout-align="center start"  layout="row" layout-sm="column">
     <div class="md-toolbar-tools"   flex="100" flex-gt-md="80">
       <md-button ng-click="showSearch = !showSearch" aria-label="Back" class="md-icon-button">

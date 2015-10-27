@@ -13,11 +13,7 @@ angular.module('ranitsApp')
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };
-  $scope.openBottomSheet = function() {
-    $mdBottomSheet.show({
-      template: '<md-bottom-sheet>Hello!</md-bottom-sheet>'
-    });
-  };
+
   $scope.toggleLeft = buildToggler('left');
 
   /**
@@ -35,17 +31,6 @@ angular.module('ranitsApp')
 
     return debounceFn;
   }
-
-  $scope.links = [
-    {
-      href : '#/add',
-      name: 'Lisa kogumik'
-    },
-    {
-      href : '#/',
-      name: 'Algus'
-    }
-  ];
 
   $scope.menu = [
     {
@@ -65,7 +50,6 @@ angular.module('ranitsApp')
     }
   ];
 
-  $scope.users = ['Fabio', 'Leonardo', 'Thomas', 'Gabriele', 'Fabrizio', 'John', 'Luis', 'Kate', 'Max'];
 
 })
 .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {

@@ -30,6 +30,10 @@ angular
     templateUrl: 'views/add.html',
     controller: 'AddCtrl'
   })
+  .when('/loggedin', {
+    templateUrl: 'views/loggedin.html',
+    controller: 'LoggedCtrl'
+  })
   .otherwise({
     redirectTo: '/'
   });

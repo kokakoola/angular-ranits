@@ -34,9 +34,9 @@
   </div>
 </md-toolbar>
 
-<md-toolbar class="md-hue-1" ng-show="showSearch" ng-controller="ToggleCtrl">
+<md-toolbar class="md-hue-1" ng-show="showSearch">
   <div layout-align="center start"  layout="row" layout-sm="column">
-    <div class="md-toolbar-tools"   flex="100" flex-gt-md="80">
+    <div class="md-toolbar-tools"   flex>
       <md-button ng-click="showSearch = !showSearch" aria-label="Back" class="md-icon-button">
         <ng-md-icon icon="close"></ng-md-icon>
       </md-button>
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div layout-align="center start"  layout="row" layout-sm="column">
-    <div flex="80">
+    <div flex>
       <div  class="slideDown" ng-show="slideDown">
 
         <p>Siia tuleb täppisotsingu vorm, laius järgib sisuosa laiust. Action-nupud hoida lahus vormiosast.</p>

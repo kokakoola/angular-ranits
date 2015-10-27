@@ -107,40 +107,20 @@ md-list md-list-item.md-3-line .md-list-item-text p {
 
 // Card
 md-card {
+  min-width: 230px;
+  max-width: 320px;
   background-color: #fff;
   h2:first-of-type {
     margin-top: 0;
   }
 }
-// md-toolbar {
-//   .md-button.md-default-theme {
-//     border-radius: 99%;
-//   }
-// }
-// h2 {
-//   font-weight: 400;
-// }
-// .md-toolbar-tools-bottom {
-//   font-size: small;
-//   & :last-child {
-//     opacity: 0.8;
-//   }
-// }
-// md-toolbar:not(.md-hue-1),
-// .md-fab {
-//   fill: #fff;
-// }
-// md-sidenav {
-//   fill: #737373;
-//   ng-md-icon {
-//     position: relative;
-//     top: 5px;
-//   }
-// }
 
-// .md-button.md-fab {
-//   line-height: 1;
-// }
+md-sidenav.md-locked-open {
+  width: 256px;
+  min-width: 256px;
+  max-width: 256px;
+}
+
 
 // .md-sidenav-push-in {
 //     // drawers

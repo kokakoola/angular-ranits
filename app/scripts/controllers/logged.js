@@ -9,5 +9,8 @@
  */
 
 angular.module('ranitsApp')
- .controller('IndexCtrl', function($scope){
+ .controller('LoggedCtrl', function($scope, $mdSidenav){
+  $scope.toggleSidenav = function(menuId) {
+    $mdSidenav(menuId).toggle();
+  };
 })

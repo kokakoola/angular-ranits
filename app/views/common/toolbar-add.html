@@ -1,72 +1,63 @@
-<md-toolbar class="md-accent" ng-show="!showSearch" ng-controller="LeftCtrl">
-  <div flex="100" flex-gt-sm="90"  layout="row " layout-sm="column">
-    <div class="md-toolbar-tools" flex="100" flex-gt-sm="90"  layout="row " layout-sm="column">
-      <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+<md-toolbar class="md-accent" ng-show="!showSearch">
+  <div layout-align="center start" layout="row " layout-sm="column">
+    <div class="md-toolbar-tools" flex="100" >
+      <!-- <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+        <ng-md-icon icon="menu"></ng-md-icon> -->
+      </md-button>
+      <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md aria-label="Menu">
         <ng-md-icon icon="menu"></ng-md-icon>
       </md-button>
-      <!-- <md-button ng-click="toggleLeft()" hide-gt-md aria-label="Menu">
-        <ng-md-icon icon="menu"></ng-md-icon>
-      </md-button> -->
-      <div layout layout-align="center center" class="logo-lg">
-        <md-button aria-label="home" ng-href="./#/" flex flex-md="100">
-          <img src="images/logo_white.svg" alt="" >
-        </md-button>
-      </div>
+
+      <md-button ng-href="./#/" class="md-icon-button" aria-label="close">
+        <ng-md-icon icon="close"></ng-md-icon>
+      </md-button>
       <span flex></span>
-      <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+      <md-button aria-label="Search" class="md-icon-button" ng-click="showSearch = !showSearch">
         <ng-md-icon icon="search"></ng-md-icon>
       </md-button>
-      <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
-        <ng-md-icon icon="more_vert"></ng-md-icon>
-      </md-button>
-      <md-button aria-label="Login" ng-click="showListBottomSheet($event)">
-        <ng-md-icon icon="lock_outline"></ng-md-icon> Sisene
+      <md-button aria-label="User profile" class="md-icon-button">
+        <ng-md-icon icon="account_circle"></ng-md-icon>
       </md-button>
     </div>
   </div>
-
-  <!-- <md-menu> -->
-  <!-- <md-button aria-label="Open language menu" class="md-icon-button" ng-mouseenter="ctrl.openMenu($mdOpenMenu, $event)">
-  ET</md-icon>
-</md-button>
-<md-menu-content width="4">
-<md-menu-item>
-<md-button >
-
-ET
-</md-button>
-</md-menu-item>
-
-<md-menu-divider></md-menu-divider>
-<md-menu-item>
-<md-button>
-EN
-</md-button>
-</md-menu-item>
-</md-menu-content>
-</md-menu> -->
-<!-- <md-button ng-click="toggleRight()" hide-gt-md aria-label="Menu">
-<ng-md-icon icon="menu"></ng-md-icon>
-</md-button> -->
 </md-toolbar>
 
 <md-toolbar class="md-hue-1" ng-show="showSearch">
-  <div class="md-toolbar-tools">
-    <md-button ng-click="showSearch = !showSearch" aria-label="Back">
-      <ng-md-icon icon="arrow_back"></ng-md-icon>
-    </md-button>
-    <h3 flex="10">
-      Tagasi
-    </h3>
-    <md-input-container md-theme="input" flex>
-      <label>&nbsp;</label>
-      <input ng-model="search.who" placeholder="Sisesta otsisõna">
-    </md-input-container>
-    <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-      <ng-md-icon icon="search"></ng-md-icon>
-    </md-button>
-    <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
-      <ng-md-icon icon="more_vert"></ng-md-icon>
-    </md-button>
+  <div layout-align="center start"  layout="row" layout-sm="column">
+    <div class="md-toolbar-tools"   flex="100" flex-gt-md="80">
+      <md-button ng-click="showSearch = !showSearch" aria-label="Back" class="md-icon-button">
+        <ng-md-icon icon="close"></ng-md-icon>
+      </md-button>
+      <md-input-container md-theme="input" flex>
+        <label>&nbsp;</label>
+        <input ng-model="search.who" placeholder="Otsi">
+      </md-input-container>
+      <md-button aria-label="Search" ng-click="showSearch = !showSearch" class="md-icon-button">
+        <ng-md-icon icon="search"></ng-md-icon>
+      </md-button>
+      <p flex="15" class="text-right"><small>Lisa filter</small></p>
+      <md-button aria-label="Open Settings"  ng-click="slideDown = !slideDown" ng-class="{ active: slideDown }" class="md-icon-button" >
+        <ng-md-icon icon="filter_list"></ng-md-icon>
+      </md-button>
+    </div>
   </div>
+  <div layout-align="center start"  layout="row" layout-sm="column">
+    <div flex="80">
+      <div  class="slideDown" ng-show="slideDown">
+
+        <p>Siia tuleb täppisotsingu vorm, laius järgib sisuosa laiust. Action-nupud hoida lahus vormiosast.</p>
+
+
+        <div class="md-actions" layout="row " layout-sm="column">
+          <span flex></span>
+          <md-button ng-click="clearValue()">Tühista valikud</md-button>
+          <md-button class="md-primary md-button">Otsi</md-button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
 </md-toolbar>

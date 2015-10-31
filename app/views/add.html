@@ -5,7 +5,25 @@
 <!-- ////////////////////////- -->
 
 <section layout="row" layout-align="start start"  class="md-sidenav-push-in-target" ng-cloak>
-  <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/sidenav-left.html'">
+  <md-fab-speed-dial md-direction="up" class="md-fling md-fab-bottom-right">
+    <md-fab-trigger>
+      <md-button aria-label="menu" class="md-fab md-primary">
+        <ng-md-icon icon="visibility"></ng-md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+      <!-- <md-button aria-label="Published" class="md-fab md-primary md-raised md-mini">
+        <ng-md-icon icon="visibility"></ng-md-icon>
+      </md-button> -->
+      <md-button aria-label="Unpupblished" class="md-fab md-raised md-mini">
+        <ng-md-icon icon="visibility_off"></ng-md-icon>
+      </md-button>
+      <md-button aria-label="Share link" class="md-fab md-raised md-mini">
+        <ng-md-icon icon="link"></ng-md-icon>
+      </md-button>
+    </md-fab-actions>
+  </md-fab-speed-dial>
+  <md-sidenav layout="column" layout-fill  class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/sidenav-left.html'">
   </md-sidenav>
 
 
@@ -20,17 +38,41 @@
   <!-- ////////////////////////- -->
   <article flex="100" flex-gt-sm="90"  flex-gt-md="90" layout="row " layout-sm="column">
     <md-content layout="column" layout-padding flex="75" flex-sm="100" role="main">
-      <div layout="column">
-        <p class="inset">Meie metaandmed, mis on edukalt sisestatud modaalis, on siin näha</p>
+      <div layout="row">
+        <div layout="column" flex="80">
+
+          <div layout="row">
+            <div flex="20">Bioloogia</div>
+            <div flex="20">Audio, Andmed</div>
+            <div flex="60">Eelkooli haridus, Põhiharidus</div>
+          </div>
+          <md-divider class="md-default-theme"></md-divider>
+          <h2 class="md-display-1">Matemaatika õpik üheksandale klassile</h2>
+          <p class="inset">Meie metaandmed, mis on edukalt sisestatud modaalis, on siin näha</p>
+          <md-chips>
+            <md-chip>Hockey</md-chip>
+            <md-chip>Lacrosse</md-chip>
+            <md-chip>Baseball</md-chip>
+          </md-chips>
+        </div>
+        <div layout="column" flex="20">
+          Uuendatud
+        </div>
       </div>
+
       <div layout="column">
         <h2 class="inset md-headline">Uusimad</h2>
       </div>
 
       <!-- Cards -->
       <!-- ////////////////////////- -->
-      <div layout="row" layout-align="space-between start" layout-wrap ng-include="'views/common/card-repeat.html'">
+      <!-- <div layout="row" layout-wrap layout-fill layout-padding ng-include="'views/common/card-repeat.html'">
+      </div> -->
+      <div class="card-row">
+        <md-grid-list md-cols-gt-md="4" md-cols-md="3" md-cols-sm="2" md-gutter="20px" md-row-height="339px" ng-include="'views/common/card-repeat.html'">
+        </md-grid-list>
       </div>
+
 
       <!-- Showmore -->
       <!-- ////////////////////////- -->

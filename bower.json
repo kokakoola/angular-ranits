@@ -18,5 +18,8 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "ranitsApp"
+  "moduleName": "ranitsApp",
+  "resolutions": {
+    "angular-material": "master"
+  }
 }

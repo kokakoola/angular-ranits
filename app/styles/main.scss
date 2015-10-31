@@ -104,21 +104,140 @@ md-list md-list-item.md-3-line .md-list-item-text p {
 .logo-lg img {
   position: absolute;
 }
-
+.defs-only {
+  position: absolute;
+  height: 0; width: 0;
+  overflow: none;
+  left: -100%;
+}
 // Card
 md-card {
-  min-width: 230px;
-  max-width: 320px;
+  // min-width: 200px;
+  // max-width: 320px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
   background-color: #fff;
-  h2:first-of-type {
-    margin-top: 0;
+  .md-card-cover {
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    // img {
+    //   -webkit-filter: contrast(3);
+    //   filter: contrast(3);
+    // }
+    img {
+      -webkit-filter: grayscale(100%)
+        brightness(135%)
+        contrast(120%);
+        filter: grayscale(100%)
+        brightness(135%)
+        contrast(120%);
+    	transition: 1s;
+      &.book {
+        -webkit-filter: url(#monochrome)
+        brightness(135%)
+        contrast(120%);
+        filter:  url(#monochrome)
+        brightness(135%)
+        contrast(120%);
+        transition: 1s;
+      }
+      &.audio {
+        -webkit-filter: url(#gamma-red)
+        brightness(135%)
+        contrast(120%);
+        filter:  url(#gamma-red)
+        brightness(135%)
+        contrast(120%);
+        transition: 1s;
+      }
+    }
+    &:hover {
+      ng-md-icon {
+        opacity: 1;
+      }
+      img {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+        filter: none;
+      }
+    }
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      ng-md-icon {
+        opacity: 0;
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
   }
+  .md-actions {
+    padding: 10px 15px;
+    ng-md-icon {
+      fill: rgba (0,0,0, 0.7);
+    }
+  }
+}
+
+.card-row {
+  height: 329px;
+  width: 100%;
+  overflow: hidden;
 }
 
 md-sidenav.md-locked-open {
   width: 256px;
   min-width: 256px;
   max-width: 256px;
+}
+
+// multiline-ellipsis
+
+.one-row {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+$font-size: 26px;
+$line-height: 1.4;
+$lines-to-show: 3;
+
+.three-rows {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+  height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+$font-size2: 20px;
+$line-height2: 1.2;
+$lines-to-show2: 2;
+
+.two-rows {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 200px;
+  height: $font-size2*$line-height2*$lines-to-show2; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size2;
+  line-height: $line-height2;
+  -webkit-line-clamp: $lines-to-show2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 

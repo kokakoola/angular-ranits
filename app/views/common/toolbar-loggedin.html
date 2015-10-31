@@ -6,11 +6,26 @@
       <md-button aria-label="Search" class="md-icon-button" ng-click="showSearch = !showSearch">
         <ng-md-icon icon="search"></ng-md-icon>
       </md-button>
-      <md-button aria-label="User profile" class="md-icon-button">
-        <ng-md-icon icon="account_circle"></ng-md-icon>
-      </md-button>
       <md-menu>
-        <md-button aria-label="Open language menu" class="md-icon-button" ng-mouseenter="ctrl.openMenu($mdOpenMenu, $event)">
+        <md-button aria-label="Open user profile" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+          <ng-md-icon icon="account_circle"></ng-md-icon>
+        </md-button>
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button >
+              Jordan Silva
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button>
+              Logi välja
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <md-menu>
+        <md-button aria-label="Open language menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
           ET
         </md-button>
         <md-menu-content width="4">

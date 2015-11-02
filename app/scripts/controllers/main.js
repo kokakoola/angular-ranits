@@ -17,6 +17,10 @@ angular.module('ranitsApp')
   //   $mdSidenav(menuId).toggle();
   // };
 
+  $scope.click = function() {
+    alert('Hello')
+  }
+
   $scope.links = [
     {
       href : '#/add',
@@ -64,13 +68,21 @@ angular.module('ranitsApp')
       notes: "9. klassi uue Lähiajaloo õpiku kaheks tähtsamaks raskuspunktiks on ideede ajalugu ja inimesekeskne ajalugu.",
       image: "http://www.avita.ee/wtfiles/z/55b0bb5b30b4db0329486b2746cc2e74.jpg"
     }, {
+      what: 'Füüsika 9. klassile. Soojusõpetus. Tuumaenergia',
+      who: 'Enn Pärtel, Jaak Lõhmus, Rein-Karl Loide',
+      when: '2015',
+      kind: '',
+      notes: "Uue kujundusega õpik arvestab 2010. a ainekava nõudeid. Aine ehituse mudel. Soojusliikumine. Celsiuse temperatuuriskaala. Soojusülekanne (soojusülekande liigid, rakendused, aastaaegade vaheldumine, ainete soojuslikud kar",
+      image: "http://koolibri.ee/download/?action=real&id=4170"
+    }, {
       what: 'Keemia õpik 8. klassile',
       who: 'Taavi Ivan',
       when: '2015',
       kind: '',
       notes: "Uue põhikooli VIII klassi õpiku peamised ülesanded on äratada õpilastes",
       image: "http://www.avita.ee/wtfiles/k/1118a1a2f180bdba2f864f85c21dba23.jpg"
-    }, {
+    },
+    {
       what: 'Normaalne söömine',
       who: 'Mihkel Zilmer, Urmas Kokassaar, Anne Lill',
       when: '2015',

@@ -4,41 +4,38 @@
 <section layout="row" layout-align="center start" ng-cloak>
   <!-- Round Fab-button -->
   <!-- ////////////////////////- -->
-<div ng-controller="DialogCtrl">
-  <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showMeta($event)">
-    <md-tooltip>
-      Lisa materjal
-    </md-tooltip>
-    <ng-md-icon icon="add"></ng-md-icon>
-  </md-button>
-</div>
+  <div ng-controller="DialogCtrl">
+    <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showMeta($event)">
+      <md-tooltip>
+        Lisa materjal
+      </md-tooltip>
+      <ng-md-icon icon="add"></ng-md-icon>
+    </md-button>
+  </div>
+  
+  <!-- Middle content -->
+  <!-- ////////////////////////- -->
+  <article flex="100" flex-gt-md="80" layout="row " layout-sm="column">
+    <md-content layout="column" layout-padding flex="75" flex-sm="100" role="main">
+      <div layout="column">
+        <h3 class="inset">Uusimad</h3>
+        <p class="inset ">layout-wrap, flex, flex-sm, flex-md</p>
+      </div>
 
+      <!-- Cards -->
+      <!-- ////////////////////////- -->
+      <div layout="row" layout-align="space-between start" layout-wrap ng-include="'views/common/card-repeat.html'">
+      </div>
 
+      <!-- Showmore -->
+      <!-- ////////////////////////- -->
+      <div layout="row" layout-align="end center" class="md-padding">
+        <md-button class="md-primary">
+          <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
+        </md-button>
+      </div>
+    </md-content>
 
-
-<!-- Middle content -->
-<!-- ////////////////////////- -->
-<article flex="100" flex-gt-md="80" layout="row " layout-sm="column">
-  <md-content layout="column" layout-padding flex="75" flex-sm="100" role="main">
-    <div layout="column">
-      <h3 class="inset">Uusimad</h3>
-      <p class="inset ">layout-wrap, flex, flex-sm, flex-md</p>
-    </div>
-
-    <!-- Cards -->
-    <!-- ////////////////////////- -->
-    <div layout="row" layout-align="space-between start" layout-wrap ng-include="'views/common/card-repeat.html'">
-    </div>
-
-    <!-- Showmore -->
-    <!-- ////////////////////////- -->
-    <div layout="row" layout-align="end center" class="md-padding">
-      <md-button class="md-primary">
-        <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
-      </md-button>
-    </div>
-  </md-content>
-
-  <div ng-include="'views/common/aside-right.html'" class="aside-right" flex="25" flex-sm="100"></div>
-</article>
+    <div ng-include="'views/common/aside-right.html'" class="aside-right" flex="25" flex-sm="100"></div>
+  </article>
 </section>

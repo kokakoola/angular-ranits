@@ -2,10 +2,10 @@
   <filter id="gamma-red" color-interpolation-filters="sRGB"
           x="0" y="0" height="100%" width="100%">
      <feComponentTransfer>
-      <feFuncR type="gamma" exponent="0.5" />
-      <feFuncG type="gamma" exponent="1.1" />
-      <feFuncB type="gamma" exponent="1.4" />
-        </feComponentTransfer>
+        <feFuncR type="gamma" exponent="0.5" />
+        <feFuncG type="gamma" exponent="1.1" />
+        <feFuncB type="gamma" exponent="1.4" />
+      </feComponentTransfer>
   </filter>
 </svg>
 <svg class="defs-only">
@@ -18,7 +18,7 @@
               0    0 0 1 0" />
   </filter>
 </svg>
-<md-grid-tile  ng-repeat="item in books | filter: query | orderBy: books | limitTo: 4">
+<md-grid-tile ng-click="click()" ng-repeat="item in books | filter: query | orderBy: books">
   <md-card class="md-whiteframe-4dp" >
     <div class="md-card-cover">
       <md-button aria-label="Pick" class="md-icon-button md-hue-1">
@@ -37,6 +37,11 @@
       <span class="md-caption"><ng-md-icon icon="visibility"></ng-md-icon> 114</span>
     </div>
   </md-card>
+  <!-- <md-card class="card-hover" layout-align="center center">
+    <md-card-content>
+      <md-icon class="md-48 md-white">audiotrack</md-icon>
+    </md-card-content>
+  </md-card> -->
 </md-grid-tile>
 
  <!-- flex-sm="45" flex-gt-sm="35" flex-gt-md="25" -->

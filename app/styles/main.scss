@@ -42,6 +42,12 @@
 
 $sidenav-default-width: 232px;
 
+.content-wrap {
+  margin-left: 0;
+  @media (min-width: $layout-breakpoint-md) {
+    margin-left: 256px;
+  }
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -62,10 +68,10 @@ md-content {
   text-align: right;
 }
 
-// no-border on search on toolbar
+no-border on search on toolbar
 md-toolbar md-input-container .md-input,
 md-toolbar md-input-container .md-input-focused.md-input, {
-    border-width: 0 0 0 0;
+    border-width: 0 0 0 1px;
 }
 
 // keep the dialog attached to top
@@ -169,10 +175,10 @@ md-card {
     // }
     img {
       // -webkit-filter: grayscale(100%)
-      //   brightness(135%)
+      //   brightness(135%);
       //   contrast(120%);
       //   filter: grayscale(100%)
-      //   brightness(135%)
+      //   brightness(135%);
       //   contrast(120%);
     	transition: 1s;
       &.book {

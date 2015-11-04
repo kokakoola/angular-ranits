@@ -1,48 +1,48 @@
 <md-toolbar class="md-accent" ng-show="!showSearch">
-  <div layout-align="center start" layout="row " layout-sm="column">
-    <div class="md-toolbar-tools" flex="100" >
+  <div layout-align="start start" layout="row " layout-sm="column">
+    <div class="md-toolbar-tools" flex="100"  flex-gt-md="90">
       <!-- <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
         <ng-md-icon icon="menu"></ng-md-icon> -->
       </md-button>
       <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md aria-label="Menu">
-        <ng-md-icon icon="menu"></ng-md-icon>
+        <md-icon>menu</md-icon>
       </md-button>
 
-
-      <h2>Uue materjali koostamine</h2>
-      <span flex></span>
       <md-button aria-label="Search" class="md-icon-button" ng-click="showSearch = !showSearch">
         <ng-md-icon icon="search"></ng-md-icon>
       </md-button>
-
-      <md-button ng-href="./#/" class="md-icon-button" aria-label="close">
-        <ng-md-icon icon="close"></ng-md-icon>
-      </md-button>
+      <md-input-container md-theme="input" flex>
+        <label>&nbsp;</label>
+        <input ng-click="showSearch = !showSearch">
+      </md-input-container>
       <md-menu>
         <md-button aria-label="Share" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-          <ng-md-icon icon="share"></ng-md-icon>
+          <md-icon>visibility</md-icon>
         </md-button>
         <md-menu-content width="4">
           <md-menu-item>
             <md-button >
-              Saada link
+              <md-icon >link</md-icon> Saada link
             </md-button>
           </md-menu-item>
           <md-menu-divider></md-menu-divider>
           <md-menu-item>
             <md-button>
-              Avaldatud
+              <span><md-icon >visibility</md-icon> Avaldatud </span><span class="md-alt-text"><md-icon>check</md-icon></span>
             </md-button>
           </md-menu-item>
           <md-menu-divider></md-menu-divider>
           <md-menu-item>
             <md-button>
-              Avalda
+              <md-icon >visibility_off</md-icon> Avalda
             </md-button>
           </md-menu-item>
         </md-menu-content>
       </md-menu>
-      <md-switch aria-label="Switch 2" ng-model="switchOn" ng-change="switch()" class="md-primary"><small>{{ switchtext }}</small></md-switch>
+      <md-button ng-href="./#/" class="md-icon-button" aria-label="close">
+        <md-icon>close</md-icon>
+      </md-button>
+      <!-- <md-switch aria-label="Switch 2" ng-model="switchOn" ng-change="switch()" class="md-accent md-hue-2"><small>{{ switchtext }}</small></md-switch> -->
       <!-- <md-menu>
         <md-button aria-label="Open user profile" class="md-icon-button" ng-click="$mdOpenMenu($event)">
           <ng-md-icon icon="account_circle"></ng-md-icon>
@@ -67,25 +67,26 @@
 
 <md-toolbar class="md-hue-1" ng-show="showSearch">
   <div layout-align="start start"  layout="row" layout-sm="column">
-    <div class="md-toolbar-tools"   flex="100" flex-gt-md="90">
-      <md-button ng-click="showSearch = !showSearch" aria-label="Back" class="md-icon-button">
-        <ng-md-icon icon="close"></ng-md-icon>
+    <div class="md-toolbar-tools" flex="100" flex-gt-md="90">
+      <md-button aria-label="Search" ng-click="showSearch = !showSearch" class="md-icon-button">
+        <ng-md-icon icon="search"></ng-md-icon>
       </md-button>
       <md-input-container md-theme="input" flex>
         <label>&nbsp;</label>
         <input ng-model="search.who" placeholder="Otsi">
       </md-input-container>
-      <md-button aria-label="Search" ng-click="showSearch = !showSearch" class="md-icon-button">
-        <ng-md-icon icon="search"></ng-md-icon>
-      </md-button>
-      <p flex="15" class="text-right"><small>Lisa filter</small></p>
       <md-button aria-label="Open Settings"  ng-click="slideDown = !slideDown" ng-class="{ active: slideDown }" class="md-icon-button" >
         <ng-md-icon icon="filter_list"></ng-md-icon>
+      </md-button>
+      <p flex="15"><small>Lisa filter</small></p>
+
+      <md-button ng-click="showSearch = !showSearch" aria-label="Back" class="md-icon-button">
+        <ng-md-icon icon="close"></ng-md-icon>
       </md-button>
     </div>
   </div>
   <div layout-align="center start"  layout="row" layout-sm="column">
-    <div flex="80">
+    <div flex>
       <div  class="slideDown" ng-show="slideDown">
 
         <p>Siia tuleb täppisotsingu vorm, laius järgib sisuosa laiust. Action-nupud hoida lahus vormiosast.</p>
@@ -100,7 +101,4 @@
       </div>
     </div>
   </div>
-
-
-
 </md-toolbar>

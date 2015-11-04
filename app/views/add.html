@@ -1,13 +1,13 @@
-<md-sidenav style="position: absolute; left: 0, top: 0;" layout="column" layout-fill  class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/sidenav-left.html'">
+<!-- Left sidenav -->
+<!-- ////////////////////////- -->
+<md-sidenav layout="column" layout-fill  class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/sidenav-left.html'">
 </md-sidenav>
 
+<!-- Rest of content -->
+<!-- ////////////////////////- -->
 <div class="content-wrap">
   <div ng-include="'views/common/toolbar-add.html'"  ng-controller="DialogCtrl"></div>
-
-  <!-- Left sidenav -->
-  <!-- ////////////////////////- -->
-
-  <section layout="row" layout-align="start start"  class="md-sidenav-push-in-target" ng-cloak>
+  <section layout="row" layout-align="start start"  ng-cloak>
     <md-fab-speed-dial md-direction="up" class="md-fling md-fab-bottom-right">
       <md-fab-trigger>
         <md-button aria-label="menu" class="md-fab md-primary">
@@ -24,19 +24,10 @@
       </md-fab-actions>
     </md-fab-speed-dial>
 
-
-
-    <div ng-if="alert">
-      <br/>
-      <b layout="row"  class="md-padding">
-        {{alert}}
-      </b>
-    </div>
-
     <!-- Middle content -->
     <!-- ////////////////////////- -->
     <article flex="100" flex-gt-sm="90"  flex-gt-md="90" layout="row " layout-sm="column">
-      <md-content layout="column" layout-padding flex="75" flex-sm="100" role="main">
+      <md-content layout="column" flex="75" flex-sm="100" role="main">
         <div layout="row">
           <div layout="column" flex="80">
 
@@ -71,7 +62,6 @@
           <md-grid-list md-cols-gt-lg="4" md-cols-gt-md="2" md-cols-md="3" md-cols-sm="2" md-gutter="20px" md-row-height="339px" ng-include="'views/common/card-repeat.html'">
           </md-grid-list>
         </div>
-
 
         <!-- Showmore -->
         <!-- ////////////////////////- -->

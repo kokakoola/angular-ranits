@@ -1,53 +1,3 @@
-@import "../../bower_components/angular-material/angular-material.scss";
-// bower:scss
-// endbower
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../../bower_components/material-design-icons/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'),
-       local('MaterialIcons-Regular'),
-       url(../../bower_components/material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
-       url(../../bower_components/material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
-       url(../../bower_components/material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: inherit;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
-$sidenav-default-width: 232px;
-
-.content-wrap {
-  margin-left: 0;
-  @media (min-width: $layout-breakpoint-md) {
-    margin-left: 256px;
-  }
-}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -55,23 +5,28 @@ $sidenav-default-width: 232px;
   padding: 0.2em 0;
 }
 
+*:focus {
+  outline: none;
+}
+
+// @import "../../bower_components/angular-material/angular-material.scss";
+@import "iconfont.scss";
+@import "slidedown.scss";
+@import "typography.scss";
+@import "sidenav.scss";
+@import "card.scss";
+// bower:scss
+// endbower
+
+// Scaffolding
 html, body {
   background: #eee;
-  color: rgba(0,0,0,0.77); // rgba(0,0,0,0.87) ranits v.1
+  color: rgba(0,0,0,0.77);
 }
 
 md-content {
   background-color: rgba(0,0,0, 0);
-}
-
-.text-right {
-  text-align: right;
-}
-
-no-border on search on toolbar
-md-toolbar md-input-container .md-input,
-md-toolbar md-input-container .md-input-focused.md-input, {
-    border-width: 0 0 0 1px;
+  padding: 20px;
 }
 
 // keep the dialog attached to top
@@ -87,235 +42,8 @@ md-toolbar md-input-container .md-input-focused.md-input, {
   background-repeat: no-repeat;
 }
 
-/*
-animation:*/
-
-.slideDown.ng-hide {
-  height:0;
-  transition:height 0.35s ease;
-  overflow:hidden;
-  position:relative;
-}
-
-.slideDown {
-  height:141px;
-  transition:height 0.35s ease;
-  overflow:hidden;
-  position:relative;
-}
-
-.slideDown.ng-hide-remove,
-.slideDown.ng-hide-add {
-  /* remember, the .hg-hide class is added to element
-  when the active class is added causing it to appear
-  as hidden. Therefore set the styling to display=block
-  so that the hide animation is visible */
-  display:block!important;
-}
-
-
-.slideDown.ng-hide-add {
-  animation-name: hide;
-  -webkit-animation-name: hide;
-
-  animation-duration: .5s;
-  -webkit-animation-duration: .5s;
-
-  animation-timing-function: ease-in;
-  -webkit-animation-timing-function: ease-in;
-}
-
-
-
-.slideDown.ng-hide-remove {
-  animation-name: show;
-  -webkit-animation-name: show;
-
-  animation-duration: .5s;
-  -webkit-animation-duration: .5s;
-
-  animation-timing-function: ease-out;
-  -webkit-animation-timing-function: ease-out;
-}
-
-// Overrides to the material design scss
-
-
-// Right sidebar list
-md-list md-list-item.md-3-line .md-list-item-text p {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}// Topbar
-.logo-lg img {
-  position: absolute;
-}
-.defs-only {
-  position: absolute;
-  height: 0; width: 0;
-  overflow: none;
-  left: -100%;
-}
-// Card
-md-card {
-  // min-width: 200px;
-  // max-width: 320px;
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  background-color: #fff;
-  .md-card-cover {
-    height: 150px;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    // img {
-    //   -webkit-filter: contrast(3);
-    //   filter: contrast(3);
-    // }
-    img {
-      // -webkit-filter: grayscale(100%)
-      //   brightness(135%);
-      //   contrast(120%);
-      //   filter: grayscale(100%)
-      //   brightness(135%);
-      //   contrast(120%);
-    	transition: 1s;
-      &.book {
-        -webkit-filter: url(#monochrome)
-        brightness(135%)
-        contrast(120%);
-        filter:  url(#monochrome)
-        brightness(135%)
-        contrast(120%);
-        transition: 1s;
-      }
-      &.audio {
-        -webkit-filter: url(#gamma-red)
-        brightness(135%)
-        contrast(120%);
-        filter:  url(#gamma-red)
-        brightness(135%)
-        contrast(120%);
-        transition: 1s;
-      }
-    }
-    &:hover {
-      ng-md-icon {
-        opacity: 1;
-      }
-      img {
-        -webkit-filter: grayscale(0);
-        filter: grayscale(0);
-        filter: none;
-      }
-    }
-    button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      ng-md-icon {
-        opacity: 0;
-        &.active {
-          opacity: 1;
-        }
-      }
-    }
-  }
-  .md-actions {
-    padding: 10px 15px;
-    ng-md-icon {
-      fill: rgba (0,0,0, 0.7);
-    }
-  }
-}
-
-md-card.card-hover {
-  position: absolute;
-  border: 1px solid red;
-  background-color: transparent;
-  top: 5px;
-  bottom: 5px;
-  left: -10px;
-  right: 0;
-  md-card-content md-icon {
-    font-size: 48px;
-    color: green;
-  }
-}
-
 .card-row {
   height: 329px;
   width: 100%;
   overflow: hidden;
 }
-
-md-sidenav.md-locked-open {
-  width: 256px;
-  min-width: 256px;
-  max-width: 256px;
-}
-
-// multiline-ellipsis
-
-.one-row {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-$font-size: 26px;
-$line-height: 1.4;
-$lines-to-show: 3;
-
-.three-rows {
-  display: block; /* Fallback for non-webkit */
-  display: -webkit-box;
-  max-width: 400px;
-  height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
-  margin: 0 auto;
-  font-size: $font-size;
-  line-height: $line-height;
-  -webkit-line-clamp: $lines-to-show;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-$font-size2: 20px;
-$line-height2: 1.2;
-$lines-to-show2: 2;
-
-.two-rows {
-  display: block; /* Fallback for non-webkit */
-  display: -webkit-box;
-  max-width: 200px;
-  height: $font-size2*$line-height2*$lines-to-show2; /* Fallback for non-webkit */
-  margin: 0 auto;
-  font-size: $font-size2;
-  line-height: $line-height2;
-  -webkit-line-clamp: $lines-to-show2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-// .md-sidenav-push-in {
-//     // drawers
-//     .md-sidenav-push-in-target {
-//         transform: translate(0px);
-//         // same as in md-sidenav.md-closed-add.md-closed-add-active, md-sidenav.md-closed-remove.md-closed-remove-active selector
-//         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-//     }
-//     &.md-sidenav-left-open {
-//         .md-sidenav-push-in-target {
-//             transform: translate(0px);
-//         }
-//     }
-//     &.md-sidenav-right-open {
-//         .md-sidenav-push-in-target {
-//             transform: translate(-232px);
-//         }
-//     }
-// }

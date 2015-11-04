@@ -2,10 +2,13 @@
   <div layout-align="center start"  layout="row" layout-sm="column">
     <div class="md-toolbar-tools"  flex="100" flex-gt-md="80">
       <div flex="100" flex-gt-md="15" layout="row" layout-align="center center" class="logo-lg"></div>
-      <span flex></span>
       <md-button aria-label="Search" class="md-icon-button" ng-click="showSearch = !showSearch">
         <ng-md-icon icon="search"></ng-md-icon>
       </md-button>
+      <md-input-container md-theme="input" flex>
+        <label>&nbsp;</label>
+        <input ng-click="showSearch = !showSearch">
+      </md-input-container>
       <md-button aria-label="Login" class="md-icon-button"  ng-click="showLogin($event)">
         <ng-md-icon icon="lock"></ng-md-icon>
         <md-tooltip>Sisene</md-tooltip>
@@ -35,20 +38,21 @@
 
 <md-toolbar class="md-hue-1" ng-show="showSearch">
   <div layout-align="center start"  layout="row" layout-sm="column">
-    <div class="md-toolbar-tools"   flex>
-      <md-button ng-click="showSearch = !showSearch" aria-label="Back" class="md-icon-button">
-        <ng-md-icon icon="close"></ng-md-icon>
+    <div class="md-toolbar-tools" flex="100" flex-gt-md="80">
+      <md-button aria-label="Search" ng-click="showSearch = !showSearch" class="md-icon-button">
+        <ng-md-icon icon="search"></ng-md-icon>
       </md-button>
       <md-input-container md-theme="input" flex>
         <label>&nbsp;</label>
         <input ng-model="search.who" placeholder="Otsi">
       </md-input-container>
-      <md-button aria-label="Search" ng-click="showSearch = !showSearch" class="md-icon-button">
-        <ng-md-icon icon="search"></ng-md-icon>
-      </md-button>
-      <p flex="15" class="text-right"><small>Lisa filter</small></p>
       <md-button aria-label="Open Settings"  ng-click="slideDown = !slideDown" ng-class="{ active: slideDown }" class="md-icon-button" >
         <ng-md-icon icon="filter_list"></ng-md-icon>
+      </md-button>
+      <p flex="15"><small>Lisa filter</small></p>
+
+      <md-button ng-click="showSearch = !showSearch" aria-label="Back" class="md-icon-button">
+        <ng-md-icon icon="close"></ng-md-icon>
       </md-button>
     </div>
   </div>
@@ -68,7 +72,4 @@
       </div>
     </div>
   </div>
-
-
-
 </md-toolbar>

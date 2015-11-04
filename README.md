@@ -21,4 +21,5 @@ TODO frontend:
 - Add content to filter (Erkki has ecxample), layout example under FAB-button
 - Add content to login, layout example under FAB-button
 - Erinevad Dialogid vajalikud
-- Meta Dialog - select tööle
+- Meta Dialog - select tööle. seal asjad paigast ka.
+- see v6i teine ikoon. svg morph

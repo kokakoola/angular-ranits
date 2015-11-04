@@ -1,16 +1,18 @@
 <md-dialog aria-label="Metadata" flex="100">
   <md-toolbar class="md-accent">
-    <div class="md-toolbar-tools">
+    <div layout-align="center start"  layout="row" layout-sm="column">
+    <div class="md-toolbar-tools" flex-gt-md="80" flex-gt-lg="66" flex>
       <h2>Lisa materjali põhiandmed</h2>
       <span flex></span>
       <md-button ng-click="hide()" class="md-icon-button" aria-label="close">
         <ng-md-icon icon="close"></ng-md-icon>
       </md-button>
     </div>
+    </div>
   </md-toolbar>
   <form>
     <div layout="row" layout-sm="column" layout-align="center start">
-      <div flex-gt-sm="80">
+      <div  flex-gt-md="80" flex-gt-lg="66" flex>
         <md-content>
           <form name="">
             <div layout layout-sm="column">
@@ -50,7 +52,7 @@
       </div>
     </div>
     <div layout="row" layout-sm="column" layout-align="center start">
-      <div class="md-actions" flex-gt-sm="80" >
+      <div class="md-actions"  flex-gt-md="80" flex-gt-lg="66" flex layout="row " layout-sm="column">
         <span flex></span>
         <md-button ng-click="hide()">
           Katkesta

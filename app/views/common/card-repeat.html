@@ -1,6 +1,6 @@
 <md-grid-tile ng-click="click()" ng-repeat="item in books | filter: query | orderBy: books">
-  <md-card class="md-whiteframe-4dp" >
-    <div class="md-card-cover {{item.kind}}">
+  <md-card class="card-sm md-whiteframe-4dp" >
+    <div class="card-cover {{item.kind}}">
       <div ng-if="item.image">
         <img src="{{item.image}}" class="md-card-image" al="Book cover">
       </div>
@@ -27,14 +27,4 @@
       <span class="md-caption"><md-icon>visibility</md-icon> 114</span>
     </div>
   </md-card>
-
-  <!-- <md-card class="card-hover" layout-align="center center">
-    <div class="pick">
-      <md-checkbox class="md-hue-1" aria-label="Checkbox">
-      </md-checkbox>
-    </div>
-    <md-card-content >
-      <md-icon class="md-48 md-white">{{item.kind}}</md-icon>
-    </md-card-content>
-  </md-card> -->
 </md-grid-tile>

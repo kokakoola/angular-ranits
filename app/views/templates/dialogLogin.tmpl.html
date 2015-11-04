@@ -1,23 +1,24 @@
 <md-dialog aria-label="Login" flex="100">
   <md-toolbar class="md-hue-1">
-    <div class="md-toolbar-tools">
-      <h2>Vali sisenemise moodus</h2>
-      <span flex></span>
-      <md-button ng-click="hide()" class="md-icon-button" aria-label="close">
-        <ng-md-icon icon="close"></ng-md-icon>
-      </md-button>
+    <div layout-align="center start"  layout="row" layout-sm="column">
+      <div class="md-toolbar-tools" flex-gt-md="80" flex-gt-lg="66" flex>
+        <h2>Vali sisenemise moodus</h2>
+        <span flex></span>
+        <md-button ng-click="hide()" class="md-icon-button" aria-label="close">
+          <ng-md-icon icon="close"></ng-md-icon>
+        </md-button>
+      </div>
     </div>
   </md-toolbar>
   <form>
     <div layout="row" layout-align="center start" >
-      <div flex-gt-sm="80" layout="row " layout-sm="column">
+      <div flex-gt-md="80" flex-gt-lg="66" flex layout="row " layout-sm="column">
         <md-content>
           <p>Sisenemise loogika siia</p>
         </md-content>
       </div>
     </div>
-    <div class="md-actions" flex-gt-sm="80"   layout-align="center start" layout="row " layout-sm="column">
-      <span flex></span>
+    <div class="md-actions"  flex-gt-md="80" flex-gt-lg="66" flex layout-align="center end" layout="row " layout-sm="column">
       <md-button ng-click="forward('loggedin')" class="md-primary">
         <ng-md-icon icon="arrow_forward"> </ng-md-icon> Jätka
       </md-button>

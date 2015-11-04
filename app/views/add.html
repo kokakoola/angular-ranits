@@ -8,6 +8,9 @@
 <div class="content-wrap">
   <div ng-include="'views/common/toolbar-add.html'"  ng-controller="DialogCtrl"></div>
   <section layout="row" layout-align="start start"  ng-cloak>
+
+    <!-- FAB published (temporary)-->
+    <!-- ////////////////////////- -->
     <md-fab-speed-dial md-direction="up" class="md-fling md-fab-bottom-right">
       <md-fab-trigger>
         <md-button aria-label="menu" class="md-fab md-primary">
@@ -26,38 +29,71 @@
 
     <!-- Middle content -->
     <!-- ////////////////////////- -->
-    <article flex="100" flex-gt-sm="90"  flex-gt-md="90" layout="row " layout-sm="column">
-      <md-content layout="column" flex="75" flex-sm="100" role="main">
-        <div layout="row">
-          <div layout="column" flex="80">
-
-            <div layout="row">
-              <div flex="20">Bioloogia</div>
-              <div flex="20">Audio, Andmed</div>
-              <div flex="60">Eelkooli haridus, Põhiharidus</div>
-            </div>
-            <md-divider class="md-default-theme"></md-divider>
-            <h2 class="md-display-1">Matemaatika õpik üheksandale klassile</h2>
-            <p class="inset">Meie metaandmed, mis on edukalt sisestatud modaalis, on siin näha</p>
-            <md-chips>
-              <md-chip>Hockey</md-chip>
-              <md-chip>Lacrosse</md-chip>
-              <md-chip>Baseball</md-chip>
-            </md-chips>
+    <article flex="100" flex-gt-sm="90"  flex-gt-md="90" flex-gt-lg="80"  layout="row " layout-sm="column">
+      <md-content layout="column" flex="75" flex-sm="100"  role="main">
+        <md-card class="card-lg">
+          <div class="card-cover">
+            <img ng-src="http://www.avita.ee/wtfiles/z/55b0bb5b30b4db0329486b2746cc2e74.jpg" class="md-card-image" alt="Book cover">
           </div>
-          <div layout="column" flex="20">
-            Uuendatud
-          </div>
-        </div>
+          <md-card-content>
+            <md-content>
+              <div  layout="row">
+                <div layout="column" flex="66" class="left-of-book">
+                  <div layout="row">
+                    <div flex>
+                      <p class="md-body-1">
+                        <small class="md-caption">Teema</small>
+                        <br>Bioloogia
+                      </p>
+                    </div>
+                    <div flex>
+                      <p class="md-body-1">
+                        <small class="md-caption">Tüüp</small>
+                        <br>Audio, Andmed
+                      </p>
+                    </div>
+                    <div flex>
+                      <p class="md-body-1">
+                        <small class="md-caption">Vanuserühm</small>
+                        <br>Eelkooli haridus, Põhiharidus
+                      </p>
+                    </div>
+                  </div>
+                  <md-divider class="md-default-theme"></md-divider>
+                  <h1 class="md-display-1 book-headline">Matemaatika õpik üheksandale klassile</h1>
+                  <p class="md-body-1">Meie metaandmed, mis on edukalt sisestatud modaalis, on siin näha. Nt Valik erinevaid veebipõhiseid ning väljaprinditavaid nuputamisülesandeid. Valik ülesandeid, mis sobivad lisülesanneteks nutikatele või aineolümpiaadide läbiviimiseks.</p>
+                  <p><small class="md-caption">Võtmesõnad: </small></p>
+                  <md-chips>
+                    <md-chip>Hockey</md-chip>
+                    <md-chip>Lacrosse</md-chip>
+                    <md-chip>Baseball</md-chip>
+                  </md-chips>
+                </div>
+                <div layout="column" flex="33" class="divider-left">
+                  <md-content>
+                    <p class="md-body-1">
+                      <small class="md-caption">Uuendatud: </small>
 
-        <div layout="column">
-          <h2 class="inset md-headline">Uusimad</h2>
-        </div>
+                      20.12.2015 kl 14:40
+                    </p>
+                    <p class="md-body-1">
+                      <small class="md-caption">Loodud: </small>
+
+                      20.12.2015
+                    </p>
+                    <p class="md-body-1">
+                      <small class="md-caption">Litsentsi tüüp:</small>
+                      <br>Kõik õigused kaitstud
+                    </p>
+                  </md-content>
+                </div>
+              </div>
+            </md-content>
+          </md-card-content>
+        </md-card>
 
         <!-- Cards -->
         <!-- ////////////////////////- -->
-        <!-- <div layout="row" layout-wrap layout-fill layout-padding ng-include="'views/common/card-repeat.html'">
-        </div> -->
         <div class="card-row">
           <md-grid-list md-cols-gt-lg="4" md-cols-gt-md="2" md-cols-md="3" md-cols-sm="2" md-gutter="20px" md-row-height="339px" ng-include="'views/common/card-repeat.html'">
           </md-grid-list>

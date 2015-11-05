@@ -1,5 +1,5 @@
 
-<div ng-include="'views/common/toolbar-main.html'" ng-controller="DialogCtrl"></div>
+<div ng-include="'views/common/toolbar-main.html'"></div>
 
 <section layout="row" layout-align="center start" ng-cloak>
   <!-- Round Fab-button -->
@@ -16,7 +16,7 @@
 <!-- Middle content -->
 <!-- ////////////////////////- -->
 <article flex="100" flex-gt-md="80" layout="row " layout-sm="column">
-  <md-content layout="column" layout-padding flex="80" flex-sm="100" role="main">
+  <div layout="column" layout-padding flex="80" flex-sm="100" role="main">
     <div layout="column">
       <h2 class="inset md-headline">Uusimad</h2>
     </div>
@@ -56,7 +56,7 @@
         <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
       </md-button>
     </div>
-  </md-content>
+  </div>
 
   <div ng-include="'views/common/aside-right.html'" class="aside-right" flex="20" flex-sm="100"></div>
 </article>

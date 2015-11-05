@@ -8,14 +8,8 @@
  * Controller of the ranitsApp
  */
 
-
-
 angular.module('ranitsApp')
  .controller('MainCtrl', function($scope){
-
-  // $scope.click = function() {
-  //   alert('Hello')
-  // }
 
   $scope.links = [
     {
@@ -128,6 +122,51 @@ angular.module('ranitsApp')
         image: "http://www.avita.ee/wtfiles/0/63848e77abca0f2873fb4f648035831a.jpg"
       }];
 
+  // Filter test data
+  $scope.filter = {
+    years: [{
+      value: 2010,
+      label: '2010'
+    },
+    {
+      value: 2011,
+      label: '2011'
+    },
+    {
+      value: 2012,
+      label: '2012'
+    },
+    {
+      value: 2013,
+      label: '2013'
+    },
+    {
+      value: 2014,
+      label: '2014'
+    }],
+    education: 0,
+    educations: [{
+      value: 0,
+      label: 'Alusharidus'
+    },
+    {
+      value: 1,
+      label: 'Põhiharidus'
+    },
+    {
+      value: 2,
+      label: 'Keskharidus'
+    },
+    {
+      value: 3,
+      label: 'Kutseharidus'
+    }],
+    // Checkboxes
+    onlyFreeLiterature: false,
+    onlyEducationLiterature: false,
+    searchFromMaterials: true,
+    searchFromPortfolios: true
+  }
 })
 .controller('DialogCtrl', function($scope, $mdDialog) {
   $scope.showMeta = function(ev) {

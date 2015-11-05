@@ -2,18 +2,15 @@
 /*
 animation for toggle search:*/
 
-.slideDown.ng-hide {
-  height:0;
-  transition:height 0.35s ease;
-  overflow:hidden;
-  position:relative;
-}
-
 .slideDown {
-  height:141px;
-  transition:height 0.35s ease;
+  max-height:999px;
+  transition:max-height 0.35s ease;
   overflow:hidden;
   position:relative;
+
+  &.ng-hide {
+    max-height:0;
+  }
 }
 
 .slideDown.ng-hide-remove,

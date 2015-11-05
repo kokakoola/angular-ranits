@@ -1,4 +1,4 @@
-<div id="page-add">
+<div id="page-add" layout="row" flex>
   <!-- Left sidenav -->
   <!-- ////////////////////////- -->
   <md-sidenav layout="column" layout-fill  class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/sidenav-left.html'">
@@ -6,7 +6,7 @@
 
   <!-- Rest of content -->
   <!-- ////////////////////////- -->
-  <div class="content-wrap">
+  <div class="content-wrap" layout="column" flex>
     <div ng-include="'views/common/toolbar-add.html'" ng-controller="DialogCtrl"></div>
     <section layout="row" layout-align="start start" ng-cloak>
 
@@ -30,7 +30,7 @@
 
       <!-- Middle content -->
       <!-- ////////////////////////- -->
-      <article flex="100" flex-gt-sm="90"  layout="row" layout-sm="column" layout-padding>
+      <article flex="100" flex-gt-sm="90"  layout="row" layout-sm="column">
         <div layout="column" flex="75" flex-sm="100" role="main" class="md-padding">
           <md-card class="card-lg" id="material-card">
             <md-card-content>

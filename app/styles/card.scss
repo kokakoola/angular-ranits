@@ -7,7 +7,15 @@ md-card {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
-  background-color: #fff;
+}
+
+md-card.card-lg .card-cover {
+height: 300px;
+overflow: hidden;
+position: relative;
+}
+
+md-card.card-sm {
   transition: all 0.5s;
   md-icon.icon-kind {
     font-size: 48px;
@@ -23,7 +31,7 @@ md-card {
       }
     }
   }
-  .md-card-cover {
+  .card-cover {
     height: 150px;
     overflow: hidden;
     position: relative;

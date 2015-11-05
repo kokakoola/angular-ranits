@@ -1,13 +1,17 @@
-<md-toolbar class="md-accent md-hue-2">
-  <h1 class="inset md-subhead">  <md-button class="md-icon-button hide-gt-md" ng-click="toggleLeft()" >
+<md-toolbar class="md-accent">
+  <h6 class="md-subhead">
+    <md-button class="md-icon-button hide-gt-md" ng-click="toggleLeft()" >
       <md-icon class="md-48">arrow_backward</md-icon>
-    </md-button> Materjali koostamine</h1>
+    </md-button>
+    Koostan kogumikku:
+  </h6>
 </md-toolbar>
-<md-list >
+<md-list>
+  <h6 class="md-subhead">Matemaatika õpik üheksandale klassile</h6>
   <md-item ng-repeat="item in menu">
     <a>
       <md-item-content md-ink-ripple layout="row" layout-align="start center">
-        <div class="inset">
+        <div>
           {{item.title}}
         </div>
       </md-item-content>

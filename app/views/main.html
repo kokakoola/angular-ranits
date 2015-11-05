@@ -4,60 +4,60 @@
 <section layout="row" layout-align="center start" ng-cloak>
   <!-- Round Fab-button -->
   <!-- ////////////////////////- -->
-<div ng-controller="DialogCtrl">
-  <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showMeta($event)">
-    <md-tooltip>
-      Lisa materjal
-    </md-tooltip>
-    <ng-md-icon icon="add"></ng-md-icon>
-  </md-button>
-</div>
-
-<!-- Middle content -->
-<!-- ////////////////////////- -->
-<article flex="100" flex-gt-md="80" layout="row " layout-sm="column">
-  <div layout="column" layout-padding flex="80" flex-sm="100" role="main">
-    <div layout="column">
-      <h2 class="inset md-headline">Uusimad</h2>
-    </div>
-
-    <!-- Cards -->
-    <!-- ////////////////////////- -->
-    <div class="card-row">
-      <md-grid-list md-cols-gt-md="4" md-cols-md="3" md-cols-sm="2" md-gutter="20px" md-row-height="339px" ng-include="'views/common/card-repeat-material.html'">
-        <md-grid-tile ng-click="click()" ng-repeat="item in books | filter: query | orderBy: books">
-        </md-grid-tile>
-      </md-grid-list>
-    </div>
-
-    <!-- Showmore -->
-    <!-- ////////////////////////- -->
-    <div layout="row" layout-align="end center" class="md-padding">
-      <md-button class="md-primary">
-        <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
-      </md-button>
-    </div>
-
-    <div layout="column">
-      <h2 class="inset md-headline">Lemmikud</h2>
-    </div>
-
-    <!-- Cards -->
-    <!-- ////////////////////////- -->
-    <div class="card-row">
-      <md-grid-list  md-cols-gt-md="4" md-cols-md="3" md-cols-sm="2" md-gutter="20px" md-row-height="339px" ng-include="'views/common/card-repeat.html'">
-      </md-grid-list>
-    </div>
-
-    <!-- Showmore -->
-    <!-- ////////////////////////- -->
-    <div layout="row" layout-align="end center" class="md-padding">
-      <md-button class="md-primary">
-        <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
-      </md-button>
-    </div>
+  <div ng-controller="DialogCtrl">
+    <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showMeta($event)">
+      <md-tooltip>
+        Lisa materjal
+      </md-tooltip>
+      <ng-md-icon icon="add"></ng-md-icon>
+    </md-button>
   </div>
 
-  <div ng-include="'views/common/aside-right.html'" class="aside-right" flex="20" flex-sm="100"></div>
-</article>
+  <!-- Middle content -->
+  <!-- ////////////////////////- -->
+  <article flex flex-gt-md="80"  flex-gt-lg="66" layout="row " layout-sm="column">
+    <div layout="column" flex="75" flex-sm="100" role="main">
+      <div layout="column">
+        <h2 class="md-headline">Uusimad</h2>
+      </div>
+
+      <!-- Cards -->
+      <!-- ////////////////////////- -->
+      <div class="card-row">
+        <md-grid-list md-cols-gt-md="4" md-cols-md="3" md-cols-sm="2" md-gutter="20px" md-row-height="339px" ng-include="'views/common/card-repeat-material.html'">
+          <md-grid-tile ng-click="click()" ng-repeat="item in books | filter: query | orderBy: books">
+          </md-grid-tile>
+        </md-grid-list>
+      </div>
+
+      <!-- Showmore -->
+      <!-- ////////////////////////- -->
+      <div layout="row" layout-align="end center" class="md-padding">
+        <md-button class="md-primary">
+          <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
+        </md-button>
+      </div>
+
+      <div layout="column">
+        <h2 class="md-headline">Lemmikud</h2>
+      </div>
+
+      <!-- Cards -->
+      <!-- ////////////////////////- -->
+      <div class="card-row">
+        <md-grid-list  md-cols-gt-md="4" md-cols-md="3" md-cols-sm="2" md-gutter="20px" md-row-height="339px" ng-include="'views/common/card-repeat.html'">
+        </md-grid-list>
+      </div>
+
+      <!-- Showmore -->
+      <!-- ////////////////////////- -->
+      <div layout="row" layout-align="end center" class="md-padding">
+        <md-button class="md-primary">
+          <ng-md-icon icon="arrow_forward"> </ng-md-icon>Veel
+        </md-button>
+      </div>
+    </div>
+
+    <div ng-include="'views/common/aside-right.html'" class="aside-right" flex="25" flex-sm="100"></div>
+  </article>
 </section>

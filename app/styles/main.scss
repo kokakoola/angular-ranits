@@ -5,8 +5,19 @@
   padding: 0.2em 0;
 }
 
+// reset
 *:focus {
   outline: none;
+}
+
+h1, h2, h3,  h4, h5, h6 {
+  -webkit-margin-before: 0em;
+  -webkit-padding-start: 0;
+  -webkit-margin-after: 0em;
+}
+
+ul {
+    -webkit-padding-start: 0em;
 }
 
 // @import "../../bower_components/angular-material/angular-material.scss";
@@ -16,6 +27,7 @@
 @import "sidenav.scss";
 @import "card.scss";
 @import "toolbar.scss";
+@import "md-typography.scss";
 // bower:scss
 // endbower
 
@@ -23,6 +35,23 @@
 html, body {
   background: #eee;
   color: rgba(0,0,0,0.77);
+  line-height: 1.2;
+}
+
+.left-of-book {
+  padding-right: 20px;
+}
+.book-headline {
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+.divider-left {
+  display: block;
+  border-left-width: 1px;
+  border-left-style: solid;
+  margin: 0;
+  border-left-color: rgba(0,0,0,0.12);
 }
 
 // keep the dialog attached to top
@@ -40,6 +69,7 @@ html, body {
 
 .card-row {
   height: 329px;
+  margin: 8px;
   width: 100%;
   overflow: hidden;
 }

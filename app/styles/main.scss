@@ -10,11 +10,11 @@
   outline: none;
 }
 
-h1, h2, h3,  h4, h5, h6 {
-  -webkit-margin-before: 0em;
-  -webkit-padding-start: 0;
-  -webkit-margin-after: 0em;
-}
+//h1, h2, h3,  h4, h5, h6 {
+//  -webkit-margin-before: 0em;
+//  -webkit-padding-start: 0;
+//  -webkit-margin-after: 0em;
+//}
 
 ul {
     -webkit-padding-start: 0em;
@@ -28,6 +28,10 @@ ul {
 @import "card.scss";
 @import "toolbar.scss";
 @import "md-typography.scss";
+@import "sidebar.scss";
+
+// Page specific stylesheets
+@import "pages/add.scss";
 // bower:scss
 // endbower
 
@@ -65,11 +69,4 @@ html, body {
   background-size: contain;
   height: 35px;
   background-repeat: no-repeat;
-}
-
-.card-row {
-  height: 329px;
-  margin: 8px;
-  width: 100%;
-  overflow: hidden;
 }

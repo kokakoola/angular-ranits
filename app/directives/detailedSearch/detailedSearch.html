@@ -1,0 +1,106 @@
+<form name="detailedSearchForm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-horizontal">
+                    <section>
+                        <div class="form-group">
+                            <label for="detailedSearchMainField" class="col-md-4 control-label" data-translate="DETAILED_SEARCH_MAIN"></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="detailedSearchMainField" data-ng-model="detailedSearch.main">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="detailedSearchTitleField" class="col-md-4 control-label" data-translate="DETAILED_SEARCH_TITLE"></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="detailedSearchTitleField" data-ng-model="detailedSearch.title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="detailedSearchDescriptionField" class="col-md-4 control-label" data-translate="DETAILED_SEARCH_DESCRIPTION"></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="detailedSearchDescriptionField" data-ng-model="detailedSearch.combinedDescription">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="detailedSearchAuthorField" class="col-md-4 control-label" data-translate="DETAILED_SEARCH_AUTHOR"></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="detailedSearchAuthorField" data-ng-model="detailedSearch.author">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="detailedSearchPaidField" class="col-md-4 control-label" data-translate="DETAILED_SEARCH_INCLUDE_PAID"></label>
+                            <div class="col-sm-8">
+                                <input
+                                bs-switch
+                                data-ng-model="detailedSearch.paid"
+                                type="checkbox"
+                                switch-on-text="{{'DETAILED_SEARCH_ON' | translate}}"
+                                switch-off-text="{{'DETAILED_SEARCH_OFF' | translate}}"
+                                switch-animate="true"
+                                switch-size="normal"
+                                switch-radio-off="true"
+                                switch-label-width="auto"
+                                switch-handle-width="auto"
+                                ng-true-value="'true'"
+                                ng-false-value="'false'"
+                                switch-inverse="false" id="detailedSearchPaidField">
+                            </div>
+                        </div>
+                        <div class="col-md-offset-4 clearfix">
+                            <div class="radio">
+                                <input type="radio" id="detailedSearchTypeMaterials" data-ng-model="detailedSearch.type" value="material">
+                                <label for="detailedSearchTypeMaterials" data-translate="DETAILED_SEARCH_MATERIALS"></label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" id="detailedSearchTypePortfolios" data-ng-model="detailedSearch.type" value="portfolio">
+                                <label for="detailedSearchTypePortfolios" data-translate="DETAILED_SEARCH_PORTFOLIOS"></label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" id="detailedSearchTypeAll" data-ng-model="detailedSearch.type" value="">
+                                <label for="detailedSearchTypeAll" data-translate="DETAILED_SEARCH_ALL"></label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-default pull-right" id="detailedSearchSubmit" data-ng-click="search()" data-translate="DETAILED_SEARCH_SUBMIT"></button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <section>
+                    <div class="radio">
+                        <input type="radio" id="detailedSearchEducat1" data-ng-model="detailedSearch.educationalContext" value="preschooleducation">
+                        <label for="detailedSearchEducat1" data-translate="PRESCHOOLEDUCATION"></label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="detailedSearchEducat2" data-ng-model="detailedSearch.educationalContext" value="basiceducation">
+                        <label for="detailedSearchEducat2" data-translate="BASICEDUCATION"></label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="detailedSearchEducat3" data-ng-model="detailedSearch.educationalContext" value="secondaryeducation">
+                        <label for="detailedSearchEducat3" data-translate="SECONDARYEDUCATION"</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="detailedSearchEducat4" data-ng-model="detailedSearch.educationalContext" value="vocationaleducation">
+                        <label for="detailedSearchEducat4" data-translate="VOCATIONALEDUCATION"></label>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section>
+                    <div class="form-group" data-ng-if="detailedSearch.educationalContext">
+                        <label for="filter-license-type">Valdkond</label>
+                        <ui-select data-ng-model="filters.licenseType" theme="bootstrap" data-ng-disabled="disabled" id="filter-license-type">
+                            <ui-select-match allow-clear="true" placeholder="Vali või otsi...">
+                                <span data-ng-if="$select.selected.name" data-translate="{{'LICENSETYPE_' + $select.selected.name.toUpperCase()}}"></span>
+                            </ui-select-match>
+                            <ui-select-choices repeat="type in licenseTypes | licenseTypeFilter: $select.search">
+                                <span ng-bind-html="'LICENSETYPE_' + type.name.toUpperCase() | translate | highlight: $select.search"></span>                           
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</form>

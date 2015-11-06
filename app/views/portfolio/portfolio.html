@@ -1,0 +1,87 @@
+<div class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 material-detail">
+                <div class="row">
+                    <div class="col-md-9 meta-content no-gutter-right">
+                        <div class="category text-grey clearfix">
+                         <div class="item pull-left">
+                            <div class="label">
+                                <span data-translate="DETAIL_VIEW_SUBJECT"></span>:
+                            </div>
+                            <span>
+                                <span data-ng-if="portfolio.subject" data-translate="{{'SUBJECT_' + portfolio.subject.name.toUpperCase()}}"></span>
+                            </span>
+                        </div>
+                        <div class="item pull-left">
+                            <div class="label">
+                                <span data-translate="DETAIL_VIEW_EDUCATIONAL_CONTEXT"></span>:
+                            </div>
+                            <span>
+                                <span data-ng-if="portfolio.educationalContext" data-translate="{{portfolio.educationalContext.name.toUpperCase()}}"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="heading">
+                        <h1>{{portfolio.title}}</h1>
+                    </div>
+                    <div class="authors">
+                        <span class="item">
+                            <a><span data-ng-bind="portfolio.creator.name"></span> <span data-ng-bind="portfolio.creator.surname"></span></a>
+                        </span>
+                    </div>
+                        
+                    <div data-ng-if="portfolio.summary" class="summary">
+                        {{portfolio.summary}}
+                    </div>
+                </div>
+                <div class="col-md-3 meta-sidebar">
+                    <dl class="dl-horizontal">
+                        <dt data-ng-if="portfolio.updated" class="text-grey text-big">
+                            <span data-translate="UPDATED"></span><span>:</span>
+                        </dt>
+                        <dd data-ng-if="portfolio.updated" class="text-right text-big">
+                            <span class="pull-right">{{formatDate(portfolio.updated)}}</span>
+                        </dd>
+                        <dt class="text-grey text-big">
+                            <span data-translate="CREATED"></span><span>:</span>
+                        </dt>
+                        <dd class="text-right text-big text-grey">
+                            <span class="pull-right">{{formatDate(portfolio.created)}}</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="preview">
+                        <header class="clearfix">
+                            <div class="pull-right text-grey">
+                                <i class="fa fa-eye"></i> <span>{{portfolio.views}}</span>
+                            </div>
+                        </header>
+                    </section>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="keywords text-grey clearfix">
+                        <div class="label">
+                            <span data-translate="DETAIL_VIEW_TAGS"></span>:
+                        </div>	
+                        <span data-ng-repeat="tag in portfolio.tags">
+                            <span data-ng-bind="tag.name" class="item"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-ng-repeat="chapter in portfolio.chapters">
+                <div data-dop-chapter data-chapter="chapter"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

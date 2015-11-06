@@ -22,16 +22,26 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
+      'bower_components/modernizr/modernizr.js',
+      'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-aria/angular-aria.js',
+      'bower_components/angular-click-outside/clickoutside.directive.js',
+      'bower_components/angular-material/angular-material.js',
+      'bower_components/angular-material-icons/angular-material-icons.min.js',
       'bower_components/angular-messages/angular-messages.js',
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
-      'bower_components/angular-material/angular-material.js',
-      'bower_components/angular-material-icons/angular-material-icons.min.js',
+      'bower_components/angular-translate/angular-translate.js',
+      'bower_components/angular-translate-loader-url/angular-translate-loader-url.js',
+      'bower_components/angular-youtube-mb/src/angular-youtube-embed.js',
+      'bower_components/jsog/lib/JSOG.js',
+      'bower_components/requirejs/require.js',
+      'bower_components/screenfull/dist/screenfull.js',
+      'bower_components/shufflejs/dist/jquery.shuffle.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

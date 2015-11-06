@@ -1,4 +1,3 @@
-// Generated on 2015-10-12 using generator-angular 0.11.1
 'use strict';
 
 // # Globbing
@@ -414,9 +413,19 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    // Inject Bower dependecies to require js
+    bowerRequirejs: {
+      all: {
+        rjsConfig: 'app/require.config.js',
+        options: {
+          exclude: ['requirejs'],
+          baseUrl: './'
+        }
+      }
     }
   });
-
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -469,4 +478,8 @@ module.exports = function (grunt) {
     // 'test',
     'build'
   ]);
+
+  grunt.registerTask('inject', [
+    'bowerRequirejs'
+  ])
 };

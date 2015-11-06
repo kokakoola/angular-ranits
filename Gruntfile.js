@@ -70,22 +70,34 @@ module.exports = function (grunt) {
         hostname: '0.0.0.0',
         livereload: 35729
       },
+      proxies: [{
+        context: '/rest',
+        host: 'oxygen.netgroupdigital.com',
+        port: 8080,
+        https: true
+      }],
       livereload: {
         options: {
           open: true,
           middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect().use(
-                '/app/styles',
-                connect.static('./app/styles')
-              ),
-              connect.static(appConfig.app)
-            ];
+            // Setup the proxy
+            var middlewares = [require('grunt-connect-proxy/lib/utils').proxyRequest];
+
+            middlewares.push(connect.static('.tmp'));
+
+            middlewares.push(connect().use(
+              '/bower_components',
+              connect.static('./bower_components')
+            ));
+            middlewares.push(connect().use(
+              '/app/styles',
+              connect.static('./app/styles')
+            ));
+
+            // Make directory browse-able.
+            middlewares.push(connect.static(appConfig.app));
+
+            return middlewares;
           }
         }
       },
@@ -437,6 +449,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       // 'autoprefixer:server',
+      'configureProxies:server',
       'connect:livereload',
       'watch'
     ]);

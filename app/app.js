@@ -1,4 +1,4 @@
-define(['routes','services/dependencyResolver'], function(config, dependencyResolver)
+define(['app.routes','services/dependencyResolver'], function(config, dependencyResolver)
 {
     var app = angular.module('app',[
       'ngAnimate',
@@ -75,25 +75,25 @@ define(['routes','services/dependencyResolver'], function(config, dependencyReso
         ];
     }
 
-  function configureTheme($mdThemingProvider) {
-    var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {
-      'contrastDefaultColor': 'light',
-      'contrastDarkColors': ['50'],
-      '50': 'ffffff'
-    });
+    function configureTheme($mdThemingProvider) {
+        var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {
+          'contrastDefaultColor': 'light',
+          'contrastDarkColors': ['50'],
+          '50': 'ffffff'
+        });
 
-    $mdThemingProvider.definePalette('customBlue', customBlueMap);
-    $mdThemingProvider.theme('default')
-    .primaryPalette('customBlue', {
-      'default': '500',
-      'hue-1': '50'
-    })
-    .accentPalette('purple',  {
-      'default': '500'
-    });
+        $mdThemingProvider.definePalette('customBlue', customBlueMap);
+        $mdThemingProvider.theme('default')
+        .primaryPalette('customBlue', {
+          'default': '500',
+          'hue-1': '50'
+        })
+        .accentPalette('purple',  {
+          'default': '500'
+        });
 
-    $mdThemingProvider.theme('input', 'default').primaryPalette('grey');
-  }
+        $mdThemingProvider.theme('input', 'default').primaryPalette('grey');
+    }
 
    return app;
 });

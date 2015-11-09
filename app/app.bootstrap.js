@@ -20,13 +20,13 @@ define([
   'dopHeader',
   'dopFooter',
   'dopSidebar',
-  'dopLoginBar',
   'dopAlert',
   'alertService',
   'inputValueControl',
   'angularScreenfull',
   'dopDetailedSearch',
-  'dopAddPortfolio'
+  'dopAddPortfolio',
+  'loginController'
 ], function (require, ng) {
     'use strict';
 

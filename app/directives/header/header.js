@@ -1,6 +1,5 @@
 define(['app'], function(app)
 {
-
     app.directive('showFocus', function($timeout) {
         return function(scope, element, attrs) {
           scope.$watch(attrs.showFocus,
@@ -80,7 +79,8 @@ define(['app'], function(app)
 
                 $scope.showLogin = function(ev) {
 			  		$mdDialog.show({
-                    	templateUrl: 'directives/login-bar/login-bar.html',
+						controller: 'loginController',
+                    	templateUrl: 'views/login-dialog/login-dialog.html',
                     	targetEvent: ev,
                   	})
                 };

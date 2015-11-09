@@ -6,7 +6,7 @@ define(['app'], function(app)
 			scope: {
 				portfolio: '='
 			},
-			templateUrl: 'app/directives/portfolioBox/portfolioBox.html',
+			templateUrl: 'directives/portfolioBox/portfolioBox.html',
 			controller: function ($scope, $location, $rootScope) {
 
 				$scope.savePortfolio = function(portfolio) {

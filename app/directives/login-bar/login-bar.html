@@ -1,66 +1,97 @@
-<div class="container" data-ng-if="mobileIdChallenge">
-    <div class="row">
-        <div class="col-md-6 text-right">
-            <img src="img/logo-mobiil-id.png">
-        </div>
-        <div class="col-md-4 col-mobil-id-respons">
-            <p class="lead"><span data-translate="LOGIN_MOBILEID_CODE"></span>: <strong data-ng-bind="mobileIdChallenge"></strong></p>
-            
-            <p data-translate="LOGIN_SMS"></p>
-        </div>
+<md-dialog aria-label="Login" flex="60">
+  <md-toolbar class="md-hue-1">
+    <div layout-align="center start" layout="row" layout-sm="column">
+      <div class="md-toolbar-tools">
+        <h2>Vali sisenemise moodus</h2>
+        <span flex></span>
+        <md-button ng-click="hideLogin()" class="md-icon-button" aria-label="close">
+          <ng-md-icon icon="close"></ng-md-icon>
+        </md-button>
+      </div>
     </div>
-</div>
+  </md-toolbar>
+  <form>
+    <div layout="row" layout-align="center start" >
+        <div flex>
+        <md-content>
 
-<div class="container" data-ng-if="!mobileIdChallenge">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h4 data-translate="LOGIN_CHOOSE_LOGIN_METHOD"></h4>
-        </div>
-    </div>
-    <div class="row row-login text-right">        
-        <div class="col-md-2-4 login-btn">
-            <a data-ng-if="false" class="btn btn-dark btn-lg btn-block hidden">
-                <i class="fa fa-google-plus"></i> <span data-translate="LOGIN_GOOGLE"></span>
-            </a>
-        </div>
-        
-        <div class="col-md-2-4 login-btn">
-            <a data-ng-if="false" class="btn btn-dark btn-lg btn-block">
-                <i class="fa fa-facebook-square"></i> <span data-translate="LOGIN_FACEBOOK"></span>
-            </a>
-        </div>
-        
-        <div class="col-md-2-4 login-btn">
-            <a class="btn btn-dark btn-lg btn-block" data-ng-click="idCardAuth()">
-                <img src="img/logo_id_card.svg"> <span data-translate="LOGIN_IDCARD"></span>
-            </a>
-        </div>
-        
-        <div class="col-md-2-4 login-btn">
-            <div class="form-group" data-ng-class="{'has-error': validation.error.idCode}">
-                <input type="text" class="form-control" id="idCode" data-ng-model="mobileId.idCode" placeholder="{{'PERSONAL_CODE' | translate}}" data-input-pattern="[^0-9]+" data-input-value-control maxlength="11">
-                <div>
-                    <span data-ng-if="validation.error.idCode === 'required'" class="help-block text-left" data-translate="MESSAGE_ERROR_PERSONAL_CODE_REQUIRED"></span>
-                    <span data-ng-if="validation.error.idCode === 'invalid'" class="help-block text-left" data-translate="MESSAGE_ERROR_PERSONAL_CODE_INVALID"></span>
+        <!-- TODO: NEEDS TO BE WRITTEN IN ANGULAR MATERIAL -->
+
+        <div data-ng-if="mobileIdChallenge">
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <img src="img/logo-mobiil-id.png">
+                </div>
+                <div class="col-md-4 col-mobil-id-respons">
+                    <p class="lead"><span data-translate="LOGIN_MOBILEID_CODE"></span>: <strong data-ng-bind="mobileIdChallenge"></strong></p>
+
+                    <p data-translate="LOGIN_SMS"></p>
                 </div>
             </div>
-            <div class="form-group" data-ng-class="{'has-error': validation.error.phoneNumber}">
-                <input type="text" class="form-control" id="phoneNumber" data-ng-model="mobileId.phoneNumber" placeholder="+372 XX XXX XXX" data-input-pattern="[^0-9+]+" data-input-value-control>
-                <div>
-                    <span data-ng-if="validation.error.phoneNumber === 'required'" class="help-block text-left" data-translate="MESSAGE_ERROR_PHONE_NUMBER_REQUIRED"></span>
-                    <span data-ng-if="validation.error.phoneNumber === 'notEstonian'" class="help-block text-left" data-translate="MESSAGE_ERROR_PHONE_NUMBER_NOT_ESTONIAN"></span>
+        </div>
+
+        <div data-ng-if="!mobileIdChallenge">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4 data-translate="LOGIN_CHOOSE_LOGIN_METHOD"></h4>
                 </div>
             </div>
-            <a class="btn btn-dark btn-lg btn-block" data-ng-click="mobileIdAuth()">
-                <img src="img/logo_id_card.svg"> <span data-translate="LOGIN_MOBILEID"></span>
-            </a>
+            <div class="row row-login text-right">
+                <div class="col-md-2-4 login-btn">
+                    <a data-ng-if="false" class="btn btn-dark btn-lg btn-block hidden">
+                        <i class="fa fa-google-plus"></i> <span data-translate="LOGIN_GOOGLE"></span>
+                    </a>
+                </div>
+
+                <div class="col-md-2-4 login-btn">
+                    <a data-ng-if="false" class="btn btn-dark btn-lg btn-block">
+                        <i class="fa fa-facebook-square"></i> <span data-translate="LOGIN_FACEBOOK"></span>
+                    </a>
+                </div>
+
+                <div class="col-md-2-4 login-btn">
+                    <a class="btn btn-dark btn-lg btn-block" data-ng-click="idCardAuth()">
+                        <img src="img/logo_id_card.svg"> <span data-translate="LOGIN_IDCARD"></span>
+                    </a>
+                </div>
+
+                <div class="col-md-2-4 login-btn">
+                    <div class="form-group" data-ng-class="{'has-error': validation.error.idCode}">
+                        <input type="text" class="form-control" id="idCode" data-ng-model="mobileId.idCode" placeholder="{{'PERSONAL_CODE' | translate}}" data-input-pattern="[^0-9]+" data-input-value-control maxlength="11">
+                        <div>
+                            <span data-ng-if="validation.error.idCode === 'required'" class="help-block text-left" data-translate="MESSAGE_ERROR_PERSONAL_CODE_REQUIRED"></span>
+                            <span data-ng-if="validation.error.idCode === 'invalid'" class="help-block text-left" data-translate="MESSAGE_ERROR_PERSONAL_CODE_INVALID"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{'has-error': validation.error.phoneNumber}">
+                        <input type="text" class="form-control" id="phoneNumber" data-ng-model="mobileId.phoneNumber" placeholder="+372 XX XXX XXX" data-input-pattern="[^0-9+]+" data-input-value-control>
+                        <div>
+                            <span data-ng-if="validation.error.phoneNumber === 'required'" class="help-block text-left" data-translate="MESSAGE_ERROR_PHONE_NUMBER_REQUIRED"></span>
+                            <span data-ng-if="validation.error.phoneNumber === 'notEstonian'" class="help-block text-left" data-translate="MESSAGE_ERROR_PHONE_NUMBER_NOT_ESTONIAN"></span>
+                        </div>
+                    </div>
+                    <a class="btn btn-dark btn-lg btn-block" data-ng-click="mobileIdAuth()">
+                        <img src="img/logo_id_card.svg"> <span data-translate="LOGIN_MOBILEID"></span>
+                    </a>
+                </div>
+
+                <div class="col-md-2-4 login-btn">
+                    <a class="btn btn-dark btn-lg btn-block" data-ng-click="taatAuth()">
+                        <span data-translate="LOGIN_TAAT"></span>
+                    </a>
+                </div>
+            </div>
         </div>
-        
-        <div class="col-md-2-4 login-btn">
-            <a class="btn btn-dark btn-lg btn-block" data-ng-click="taatAuth()">
-                <span data-translate="LOGIN_TAAT"></span>
-            </a>
+
+        <!-- TODO END -->
+
+        </md-content>
         </div>
-        <div class="clearfix"></div>
     </div>
-</div>
+    <div class="md-actions" layout-align="center end" layout="row" layout-sm="column">
+      <md-button class="md-primary">
+        <ng-md-icon icon="arrow_forward"> </ng-md-icon> Jätka
+      </md-button>
+    </div>
+  </form>
+</md-dialog>

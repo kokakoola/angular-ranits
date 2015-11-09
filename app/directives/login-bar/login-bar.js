@@ -1,10 +1,10 @@
 define(['app'], function(app)
-{    
-    app.directive('dopLoginBar', ['authenticationService', '$location', 'translationService', 
-     function(authenticationService, $location, translationService) {
+{
+    app.directive('dopLoginBar', ['authenticationService', '$location', 'translationService', '$mdDialog',
+     function(authenticationService, $location, translationService, $mdDialog) {
         return {
             scope: true,
-            templateUrl: 'app/directives/login-bar/login-bar.html',
+            templateUrl: 'directives/login-bar/login-bar.html',
             controller: function ($scope) {
 
                 $scope.mobileId = {};
@@ -87,6 +87,6 @@ define(['app'], function(app)
             }
         };
     }]);
-    
+
     return app;
 });

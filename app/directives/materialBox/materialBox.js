@@ -6,7 +6,7 @@ define(['app'], function(app)
 			scope: {
 				material: '='
 			},
-			templateUrl: 'app/directives/materialBox/materialBox.html',
+			templateUrl: 'directives/materialBox/materialBox.html',
 			controller: function ($scope, $location, $rootScope) {
 
 				$scope.saveMaterial = function(material) {
@@ -43,7 +43,7 @@ define(['app'], function(app)
 					if(types.length == 0) {
 						return false;
 					}
-					
+
 					for (var i = 0; i < types.length; i++) {
 						if (types[i].name === type) {
 							return true;

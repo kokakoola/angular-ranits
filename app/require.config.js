@@ -6,6 +6,7 @@ require.config({
         searchService: 'services/searchService',
         dopHeader: 'directives/header/header',
         dopFooter: 'directives/footer/footer',
+        dopSidebar: 'directives/sidebar/sidebar',
         translationService: 'services/translationService',
         dopLoginBar: 'directives/login-bar/login-bar',
         dopAlert: 'directives/alert/alert',

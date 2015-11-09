@@ -19,6 +19,7 @@ define([
   'searchService',
   'dopHeader',
   'dopFooter',
+  'dopSidebar',
   'dopLoginBar',
   'dopAlert',
   'alertService',

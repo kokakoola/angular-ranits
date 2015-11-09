@@ -7,12 +7,13 @@ md-card {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
+  min-height: 100%;
 }
 
 md-card.card-lg .card-cover {
-height: 300px;
-overflow: hidden;
-position: relative;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
 }
 
 md-card.card-sm {
@@ -82,11 +83,15 @@ md-card.card-sm {
       color: rgba(255,255,255, 0.6);
     }
   }
-  .md-actions {
-    padding: 10px 15px;
-    md-icon {
-      color: rgba (0,0,0, 0.7);
-      font-size: inherit;
+  md-card-footer {
+    padding: 0;
+
+    .md-actions {
+      padding: 10px 15px;
+      md-icon {
+        color: rgba (0,0,0, 0.7);
+        font-size: inherit;
+      }
     }
   }
 }

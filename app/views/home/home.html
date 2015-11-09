@@ -1,27 +1,66 @@
-<div class="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="row row-material">
-                    <h4 class="clearfix" data-translate="LANDING_PAGE_TITLE_NEWEST"></h4>
-                    <div class="material-taping">
-                        <div class="scroll">
-                            <div data-ng-repeat="material in materials" class="col-md-3 col-sm-4 col-xs-12 col-ms-6">
-                                <div data-dop-material-box material="material"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sidebar-module">
-                    <h4>eKoolikott</h4>
-                    <ul class="list-unstyled">
-                        <li><a data-translate="ABOUT_PAGE_LINK_TITLE" href="#/about"></a></li>
-                        <li><a data-translate="HELP_PAGE_LINK_TITLE" href="#/help"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<section layout="row" layout-align="center start" ng-cloak>
+  <!-- Round Fab-button -->
+  <!-- ////////////////////////- -->
+  <div>
+    <md-button class="md-fab md-fab-bottom-right" aria-label="Add">
+      <md-tooltip>
+        Lisa materjal
+      </md-tooltip>
+      <ng-md-icon icon="add"></ng-md-icon>
+    </md-button>
+  </div>
+
+  <!-- Middle content -->
+  <!-- ////////////////////////- -->
+  <article layout="row" layout-sm="column" flex flex-gt-md="80">
+    <div layout="column" flex="75" flex-sm="100" role="main" class="md-padding">
+      <h2 class="md-headline" data-translate="LANDING_PAGE_TITLE_NEWEST"></h2>
+
+      <!-- Cards -->
+      <!-- ////////////////////////- -->
+      <md-grid-list md-cols-gt-md="4" md-cols-md="3" md-cols-sm="2" md-gutter="20px" md-row-height="300px">
+        <md-grid-tile data-ng-repeat="material in materials">
+          <figure data-dop-material-box material="material"></figure>
+        </md-grid-tile>
+      </md-grid-list>
+
+      <!-- Showmore -->
+      <!-- ////////////////////////- -->
+      <div layout="row" layout-align="end center">
+        <md-button class="md-primary">
+          <ng-md-icon icon="arrow_forward"></ng-md-icon>Veel
+        </md-button>
+      </div>
     </div>
-</div>
+
+    <!-- TODO: SHOULD BE A COMPONENT -->
+    <aside layout-align="center start" class="sidebar" role="sidebar">
+      <h2 class="md-headline">eKoolikott</h2>
+      <md-list>
+        <md-list-item>
+          <md-button ng-href="#/about" class="md-primary" data-translate="ABOUT_PAGE_LINK_TITLE"></md-button>
+        </md-list-item>
+        <md-list-item>
+          <md-button ng-href="#/help" class="md-primary" data-translate="HELP_PAGE_LINK_TITLE"></md-button>
+        </md-list-item>
+      </md-list>
+
+      <h2 class="md-headline">Soovitused</h2>
+      <md-list>
+        <md-list-item class="md-3-line" ng-repeat="item in books">
+          <div class="md-list-item-text">
+            <h3>{{item.what}}</h3>
+            <p class="one-row">{{item.notes}}</p>
+            <h4>{{item.who}}</h4>
+          </div>
+          <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+        <md-button layout layout-align="start center" flex class="md-primary">
+          <ng-md-icon icon="arrow_forward"> </ng-md-icon>
+           Veel soovitusi
+        </md-button>
+      </md-list>
+    </aside>
+    <!-- TODO: END -->
+  </article>
+</section>

@@ -1,16 +1,24 @@
 <md-toolbar ng-show="!showSearch" class="md-whiteframe-1dp" >
-  <div layout-align="center start" layout="row" layout-sm="column">
-    <div class="md-toolbar-tools" flex="100" flex-gt-md="80">
-      <!-- TODO: REFACTOR -->
-      <a href="#/" flex="100" flex-gt-md="15" layout="row" layout-align="center center" class="logo-lg"></a>
-      <!-- TODO: END -->
-      <md-button aria-label="Search" class="md-icon-button" ng-click="showSearch = !showSearch">
-        <ng-md-icon icon="search"></ng-md-icon>
-      </md-button>
-      <md-input-container md-theme="input" flex>
-        <label>&nbsp;</label>
-        <input ng-click="showSearch = !showSearch">
-      </md-input-container>
+  <div class="md-toolbar-tools">
+    <div layout-align="center start" flex-gt-md="10" flex>
+      <a href="#/" class="logo-lg"></a>
+    </div>
+
+    <div flex-gt-md="75" flex="none">
+      <div layout="row" layout-align-gt-md="center center" layout-align="center end">
+        <md-button aria-label="Search" class="md-icon-button md-padding" ng-click="showSearch = !showSearch">
+          <ng-md-icon icon="search"></ng-md-icon>
+        </md-button>
+        <md-input-container class="md-padding" hide show-gt-md flex>
+          <input ng-click="showSearch = !showSearch">
+        </md-input-container>
+        <md-button aria-label="Open Settings" class="md-icon-button" ng-click="showFilter = showSearch = !showFilter" >
+          <ng-md-icon icon="filter_list"></ng-md-icon>
+        </md-button>
+      </div>
+    </div>
+
+    <div flex-gt-md="15" flex="none">
       <md-button data-ng-hide="user" aria-label="Login" class="md-icon-button" ng-click="showLogin($event)">
         <ng-md-icon icon="lock"></ng-md-icon>
         <md-tooltip>Sisene</md-tooltip>
@@ -67,28 +75,25 @@
 
 <div class="md-toolbar-expandable" ng-show="showSearch">
   <md-toolbar class="md-hue-1">
-    <div layout-align="center start" layout="row" layout-sm="column">
-      <div class="md-toolbar-tools" flex="100" flex-gt-md="80">
-        <md-button aria-label="Search" data-ng-click="search()" class="md-icon-button">
-          <ng-md-icon icon="search"></ng-md-icon>
-        </md-button>
-        <md-input-container md-theme="input" flex>
-          <label>&nbsp;</label>
-          <input data-ng-keydown="$event.which === 13 && search()" data-ng-model="searchFields.searchQuery" placeholder="{{'SEARCH' | translate}}" data-ng-disabled="detailedSearch.isVisible"  />
-        </md-input-container>
+    <div class="md-toolbar-tools" layout-align="center center">
+      <div flex-gt-md="80" flex="100">
+        <div layout="row" layout-align="center center">
+          <md-button aria-label="Search" data-ng-click="search()" class="md-icon-button">
+            <ng-md-icon icon="search"></ng-md-icon>
+          </md-button>
 
-        <div layout="row" layout-align="center center" flex="20" ng-click="showFilter = !showFilter" class="md-toolbar-filter-toggle">
-          <md-button aria-label="Open Settings" class="md-icon-button" >
+          <md-input-container class="md-padding" flex>
+            <label hidden="hidden">&nbsp;</label>
+            <input data-ng-keydown="$event.which === 13 && search()" data-ng-model="searchFields.searchQuery" placeholder="{{'SEARCH' | translate}}" data-ng-disabled="detailedSearch.isVisible"  />
+          </md-input-container>
+
+          <md-button aria-label="Open Settings" class="md-icon-button" ng-click="showFilter = !showFilter" >
             <ng-md-icon icon="filter_list"></ng-md-icon>
           </md-button>
-          <p flex>
-            <small>{{showFilter ? 'Sulge' : 'Ava'}} filter</small>
-          </p>
+          <md-button ng-click="showSearch = showFilter = !showSearch" aria-label="Back" class="md-icon-button">
+            <ng-md-icon icon="close"></ng-md-icon>
+          </md-button>
         </div>
-
-        <md-button ng-click="showSearch = showFilter = !showSearch" aria-label="Back" class="md-icon-button">
-          <ng-md-icon icon="close"></ng-md-icon>
-        </md-button>
       </div>
     </div>
   </md-toolbar>

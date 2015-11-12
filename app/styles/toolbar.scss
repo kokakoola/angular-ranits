@@ -1,4 +1,16 @@
+.md-toolbar-expandable {
+  .md-toolbar-tools {
+    .md-button:first-child {
+      margin-left: -12px;
+    }
+    .md-button:last-child {
+      margin-right: -12px;
+    }
+  }
+}
+
 .md-toolbar-filter {
+  padding: 0 16px;
   background-color: #fff;
   max-height:999px;
   overflow:hidden;

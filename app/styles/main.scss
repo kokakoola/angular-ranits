@@ -20,7 +20,6 @@ ul {
     -webkit-padding-start: 0em;
 }
 
-// @import "../../bower_components/angular-material/angular-material.scss";
 @import "iconfont.scss";
 @import "slidedown.scss";
 @import "typography.scss";
@@ -32,8 +31,6 @@ ul {
 
 // Page specific stylesheets
 @import "pages/add.scss";
-// bower:scss
-// endbower
 
 // Scaffolding
 html, body {
@@ -58,15 +55,12 @@ html, body {
   border-left-color: rgba(0,0,0,0.12);
 }
 
-// keep the dialog attached to top
-//.md-dialog-container {
-//  align-items: flex-start;
-//}
-
 .logo-lg {
+  display: block;
   background-image: url('../images/logo_white.svg');
   margin-top: 5px;
   background-size: contain;
   height: 35px;
   background-repeat: no-repeat;
+  background-position: left center;
 }

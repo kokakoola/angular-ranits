@@ -1,18 +1,11 @@
-define(['app.routes','services/dependencyResolver'], function(config, dependencyResolver)
+define(['app.routes', 'services/dependencyResolver'], function(config, dependencyResolver)
 {
-    var app = angular.module('app',[
-      'ngAnimate',
-      'ngAria',
-      'ngMessages',
-      'ngResource',
+    var app = angular.module('app', [
       'ngRoute',
-      'ngSanitize',
-      'ngTouch',
       'ngMaterial',
       'ngMdIcons',
       'pascalprecht.translate',
-      'youtube-embed',
-      'angularScreenfull'
+      'youtube-embed'
     ]);
 
     app.config(

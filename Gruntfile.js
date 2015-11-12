@@ -65,10 +65,10 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: 3001,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
-        livereload: 35729,
+        livereload: 3729,
         protocol: 'https'
       },
       proxies: [{
@@ -248,7 +248,6 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
@@ -262,16 +261,7 @@ module.exports = function (grunt) {
     useminPrepare: {
       html: '<%= yeoman.app %>/index.html',
       options: {
-        dest: '<%= yeoman.dist %>',
-        flow: {
-          html: {
-            steps: {
-              js: ['concat', 'uglifyjs'],
-              css: ['cssmin']
-            },
-            post: {}
-          }
-        }
+        dest: '<%= yeoman.dist %>'
       }
     },
 
@@ -360,9 +350,10 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: '*.js',
-          dest: '.tmp/concat/scripts'
+          src: [
+            '<%= yeoman.app %>/{,*/}/{,*/}*.js'
+          ],
+          dest: '.tmp'
         }]
       }
     },
@@ -388,7 +379,15 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'directives/{,*/}*.html'
+          ]
+        },{
+          expand: true,
+          cwd: '.',
+          dest: '.tmp',
+          src: [
+            'bower_components/**/*.js'
           ]
         }, {
           expand: true,
@@ -428,13 +427,46 @@ module.exports = function (grunt) {
       }
     },
 
-    // Inject Bower dependecies to require js
-    bowerRequirejs: {
-      all: {
-        rjsConfig: 'app/require.config.js',
+    // Settings for grunt-bower-requirejs
+    bower: {
+      app: {
+        rjsConfig: '<%= yeoman.app %>/require.config.js',
         options: {
-          exclude: ['requirejs'],
-          baseUrl: './'
+          exclude: ['material-design-icons']
+        }
+      }
+    },
+
+    replace: {
+      dist: {
+        src: '<%= yeoman.dist %>/index.html',
+        overwrite: true,
+        replacements: [{
+          from: 'bower_components/requirejs/require.js',
+          to: 'scripts/requirejs.js'
+        }, {
+          from: 'require.config',
+          to: 'scripts/require.config'
+        }]
+      }
+    },
+
+    // r.js compile config
+    requirejs: {
+      dist: {
+        options: {
+          dir: '<%= yeoman.dist %>/scripts',
+          modules: [{
+            name: 'require.config'
+          }],
+          preserveLicenseComments: false, // remove all comments
+          removeCombined: true,
+          baseUrl: '.tmp/<%= yeoman.app %>',
+          mainConfigFile: '.tmp/<%= yeoman.app %>/require.config.js',
+          optimize: 'uglify2',
+          uglify2: {
+            mangle: false
+          }
         }
       }
     }
@@ -448,8 +480,9 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
+      'bower:app',
       'concurrent:server',
-      // 'autoprefixer:server',
+      'autoprefixer:server',
       'configureProxies:server',
       'connect:livereload',
       'watch'
@@ -473,27 +506,26 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
+    'bower:app',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
     'concat',
     'ngAnnotate',
     'copy:dist',
+    'replace:dist',
     'cdnify',
     'cssmin',
-    'uglify',
+    // Below task commented out as r.js (via grunt-contrib-requirejs) will take care of this
+    // 'uglify',
     'filerev',
     'usemin',
+    'requirejs:dist',
     'htmlmin'
   ]);
 
   grunt.registerTask('default', [
     'newer:jshint',
-    // 'test',
     'build'
   ]);
-
-  grunt.registerTask('inject', [
-    'bowerRequirejs'
-  ])
 };

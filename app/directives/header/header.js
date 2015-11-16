@@ -80,7 +80,7 @@ define(['app'], function(app)
                 $scope.showLogin = function(ev) {
 			  		$mdDialog.show({
 						controller: 'loginController',
-                    	templateUrl: 'views/login-dialog/login-dialog.html',
+                    	templateUrl: 'views/loginDialog/loginDialog.html',
                     	targetEvent: ev,
                   	})
                 };

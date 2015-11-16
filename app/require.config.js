@@ -15,7 +15,7 @@ require.config({
     dopDetailedSearch: 'directives/detailedSearch/detailedSearch',
     addPortfolioFabButton: 'directives/addPortfolioFabButton/addPortfolioFabButton',
     addPortfolioDialogController: 'views/addPortfolioDialog/addPortfolioDialog',
-    loginController: 'views/login-dialog/login-dialog',
+    loginDialogController: 'views/loginDialog/loginDialog',
     angular: '../bower_components/angular/angular',
     'angular-animate': '../bower_components/angular-animate/angular-animate',
     'angular-aria': '../bower_components/angular-aria/angular-aria',
@@ -104,7 +104,7 @@ define([
   'dopDetailedSearch',
   'addPortfolioFabButton',
   'addPortfolioDialogController',
-  'loginController'
+  'loginDialogController'
 ], function (angular, app) {
   'use strict';
   var $html = angular.element(document.getElementsByTagName('html')[0]);

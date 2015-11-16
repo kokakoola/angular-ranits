@@ -1,3 +1,5 @@
+<div id="navmenu" data-dop-header></div>
+
 <div class="main">
     <div class="container">
         <div class="row">
@@ -30,7 +32,7 @@
                             <a><span data-ng-bind="portfolio.creator.name"></span> <span data-ng-bind="portfolio.creator.surname"></span></a>
                         </span>
                     </div>
-                        
+
                     <div data-ng-if="portfolio.summary" class="summary">
                         {{portfolio.summary}}
                     </div>
@@ -52,7 +54,7 @@
                     </dl>
                 </div>
             </div>
-                
+
             <div class="row">
                 <div class="col-md-12">
                     <section class="preview">
@@ -64,20 +66,20 @@
                     </section>
                 </div>
             </div>
-                
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="keywords text-grey clearfix">
                         <div class="label">
                             <span data-translate="DETAIL_VIEW_TAGS"></span>:
-                        </div>	
+                        </div>
                         <span data-ng-repeat="tag in portfolio.tags">
                             <span data-ng-bind="tag.name" class="item"></span>
                         </span>
                     </div>
                 </div>
             </div>
-            
+
             <div data-ng-repeat="chapter in portfolio.chapters">
                 <div data-dop-chapter data-chapter="chapter"></div>
             </div>

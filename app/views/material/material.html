@@ -1,3 +1,5 @@
+<div id="navmenu" data-dop-header></div>
+
 <div class="main">
     <div class="container">
         <div class="row">
@@ -64,7 +66,7 @@
                                 <span data-ng-if="!material.issueDate.year" class="pull-right"><span data-translate="UNKNOWN"></span></span>
                             </dd>
                         </dl>
-                        
+
                         <div data-ng-if="material.publishers" class="item">
                             <div data-ng-if="material.publishers && material.publishers.length === 1" class="text-right text-grey label">
                                 <span data-translate="PUBLISHER">Publisher</span>
@@ -79,7 +81,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="item">
                             <div class="text-right text-grey label">
                                 <span data-translate="MATERIAL_VIEW_LICENSE_TYPE">License type</span>
@@ -89,7 +91,7 @@
                                 <span data-ng-if="!material.licenseType" data-translate="LICENSETYPE_ALLRIGHTSRESERVED"></span>
                             </div>
                         </div>
-                        
+
                         <div class="item">
                             <div class="text-right text-danger" data-ng-if="material.paid" data-translate="MATERIAL_PAID">Paid</div>
                         </div>
@@ -136,7 +138,7 @@
                         <div class="keywords text-grey clearfix">
                             <div class="label">
                                 <span data-translate="DETAIL_VIEW_TAGS"></span>:
-                            </div>	
+                            </div>
                             <span data-ng-repeat="tag in material.tags">
                                 <span data-ng-bind="tag.name" class="item"></span>
                             </span>

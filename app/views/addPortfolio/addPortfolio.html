@@ -1,13 +1,12 @@
 <div id="page-add" layout="row" flex>
   <!-- Left sidenav -->
   <!-- ////////////////////////- -->
-  <md-sidenav layout="column" layout-fill  class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+  <md-sidenav layout="column" layout-fill class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
     <md-toolbar class="md-accent">
       <h6 class="md-toolbar-tools md-subhead">
-        <md-button class="md-icon-button hide-gt-md" ng-click="toggleLeft()" >
+        <md-button class="md-icon-button hide-gt-md" ng-click="toggleSidenav()" >
           <md-icon class="md-48">arrow_backward</md-icon>
         </md-button>
-        Koostan kogumikku:
       </h6>
     </md-toolbar>
     <md-list>
@@ -27,7 +26,9 @@
   <!-- Rest of content -->
   <!-- ////////////////////////- -->
   <div class="content-wrap" layout="column" flex>
+
     <div id="navmenu" data-portfolio-header></div>
+
     <section layout="row" layout-align="start start" ng-cloak>
 
       <!-- Middle content -->

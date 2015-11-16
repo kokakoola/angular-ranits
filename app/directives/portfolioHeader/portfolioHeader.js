@@ -1,12 +1,14 @@
 define(['app'], function(app)
 {
-    app.directive('portfolioHeader', ['translationService', '$location', 'searchService', '$mdDialog',
-     function(translationService, $location, searchService, $mdDialog) {
+    app.directive('portfolioHeader', ['translationService', '$location', '$mdSidenav',
+     function(translationService, $location, $mdSidenav) {
         return {
             scope: true,
             templateUrl: 'directives/portfolioHeader/portfolioHeader.html',
             controller: function ($scope, $location) {
-                //TODO: PORTFOLIO HEADER LOGIC
+                $scope.toggleSidenav = function() {
+                    $mdSidenav('left').toggle();
+                }
             }
         };
     }]);

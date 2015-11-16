@@ -11,7 +11,10 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: {
+      app: 'dist/app',
+      folder: 'dist'
+    }
   };
 
   // Define the configuration for all the tasks
@@ -95,7 +98,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           open: true,
-          base: '<%= yeoman.dist %>'
+          base: '<%= yeoman.dist.app %>'
         }
       }
     },
@@ -109,7 +112,8 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
+          // Commented out because .jshintrc is not correctly configured to follow DÖP developers style
+          //'<%= yeoman.app %>/**/**/*.js'
         ]
       }
     },
@@ -121,8 +125,8 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git{,*/}*'
+            '<%= yeoman.dist.folder %>/{,*/}*',
+            '!<%= yeoman.dist.folder %>/.git{,*/}*'
           ]
         }]
       },
@@ -186,7 +190,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+          generatedImagesDir: '<%= yeoman.dist.app %>/images/generated'
         }
       },
       server: {
@@ -200,9 +204,9 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/fonts/*'
+          '<%= yeoman.dist.app %>/styles/{,*/}*.css',
+          '<%= yeoman.dist.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.dist.app %>/fonts/*'
         ]
       }
     },
@@ -213,48 +217,22 @@ module.exports = function (grunt) {
     useminPrepare: {
       html: '<%= yeoman.app %>/index.html',
       options: {
-        dest: '<%= yeoman.dist %>'
+        dest: '<%= yeoman.dist.folder %>'
       }
     },
 
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+      html: ['<%= yeoman.dist.app %>/{,*/}*.html'],
+      css: ['<%= yeoman.dist.app %>/styles/{,*/}*.css'],
       options: {
         assetsDirs: [
-          '<%= yeoman.dist %>',
-          '<%= yeoman.dist %>/images',
-          '<%= yeoman.dist %>/styles'
+          '<%= yeoman.dist.app %>',
+          '<%= yeoman.dist.app %>/images',
+          '<%= yeoman.dist.app %>/styles'
         ]
       }
     },
-
-    // The following *-min tasks will produce minified files in the dist folder
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
 
     imagemin: {
       dist: {
@@ -262,7 +240,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/images'
+          dest: '<%= yeoman.dist.app %>/images'
         }]
       }
     },
@@ -273,7 +251,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
+          dest: '<%= yeoman.dist.app %>/images'
         }]
       }
     },
@@ -289,9 +267,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: '<%= yeoman.dist %>',
+          cwd: '<%= yeoman.dist.app %>',
           src: ['*.html', 'views/{,*/}*.html'],
-          dest: '<%= yeoman.dist %>'
+          dest: '<%= yeoman.dist.app %>'
         }]
       }
     },
@@ -313,7 +291,7 @@ module.exports = function (grunt) {
     // Replace Google CDN references
     cdnify: {
       dist: {
-        html: ['<%= yeoman.dist %>/*.html']
+        html: ['<%= yeoman.dist.app %>/*.html']
       }
     },
 
@@ -324,7 +302,7 @@ module.exports = function (grunt) {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
+          dest: '<%= yeoman.dist.app %>',
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
@@ -344,7 +322,7 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
+          dest: '<%= yeoman.dist.app %>/images',
           src: ['generated/*']
         }]
       },
@@ -383,7 +361,7 @@ module.exports = function (grunt) {
 
     replace: {
       dist: {
-        src: '<%= yeoman.dist %>/index.html',
+        src: '<%= yeoman.dist.app %>/index.html',
         overwrite: true,
         replacements: [{
           from: 'bower_components/requirejs/require.js',
@@ -399,7 +377,7 @@ module.exports = function (grunt) {
     requirejs: {
       dist: {
         options: {
-          dir: '<%= yeoman.dist %>/scripts',
+          dir: '<%= yeoman.dist.app %>/scripts',
           modules: [{
             name: 'require.config'
           }],
@@ -413,7 +391,32 @@ module.exports = function (grunt) {
           }
         }
       }
-    }
+    },
+
+    // Create compressed archive for deployment
+    compress: {
+      dev: {
+        options: {
+          archive: '<%= yeoman.dist.folder %>/dop.tar.gz',
+          mode: 'tgz'
+        },
+        expand: true,
+        cwd: '<%= yeoman.dist.folder %>/',
+        src: ['app/**/*']
+      },
+      live: {
+        options: {
+          archive: '<%= yeoman.dist.folder %>/dop.tar.gz',
+          mode: 'tgz'
+        },
+        expand: true,
+        cwd: '<%= yeoman.dist.folder %>/',
+        src: [
+          'app/**/*',
+          '!app/views/dev/**'
+        ]
+      },
+    },
   });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
@@ -455,5 +458,15 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'newer:jshint',
     'build'
+  ]);
+
+  grunt.registerTask('package', [
+    'build',
+    'compress:dev'
+  ]);
+
+  grunt.registerTask('package-live', [
+    'build',
+    'compress:live'
   ]);
 };

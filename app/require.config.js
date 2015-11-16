@@ -22,7 +22,6 @@ require.config({
     'angular-click-outside': '../bower_components/angular-click-outside/clickoutside.directive',
     'angular-material': '../bower_components/angular-material/angular-material',
     'angular-material-icons': '../bower_components/angular-material-icons/angular-material-icons.min',
-    'angular-mocks': '../bower_components/angular-mocks/angular-mocks',
     'angular-resource': '../bower_components/angular-resource/angular-resource',
     'angular-route': '../bower_components/angular-route/angular-route',
     'angular-translate': '../bower_components/angular-translate/angular-translate',

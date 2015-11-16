@@ -1,106 +1,100 @@
-
-<form layout-align="center start" layout="row" layout-sm="column">
-  <div flex="100" flex-gt-md="80">
-      <div layout="row" layout-sm="column">
-        <div flex>
-          <md-input-container flex>
-            <label data-translate="DETAILED_SEARCH_TITLE"></label>
-            <input data-ng-model="detailedSearch.title" />
-          </md-input-container>
-          <md-input-container flex>
-            <label data-translate="DETAILED_SEARCH_AUTHOR"></label>
-            <input data-ng-model="detailedSearch.author" />
-          </md-input-container>
-          <md-input-container flex>
-            <label>Keel</label>
-            <md-select data-ng-model="filter.language">
-              <md-option data-ng-repeat="language in languages" value="{{language.abbrev}}">
-                {{language.abbrev}}
-              </md-option>
-            </md-select>
-          </md-input-container>
-          <div layout="row">
-            <md-input-container flex>
-              <label>Alates</label>
-              <md-select data-ng-model="filter.yearFrom" flex>
-                <md-option data-ng-repeat="year in filter.years" value="{{year.value}}">
-                  {{year.label}}
-                </md-option>
-              </md-select>
-            </md-input-container>
-            <md-input-container flex>
-              <label>Kuni</label>
-              <md-select data-ng-model="filter.yearTo" flex>
-                <md-option data-ng-repeat="year in filter.years" value="{{year.value}}">
-                  {{year.label}}
-                </md-option>
-              </md-select>
-            </md-input-container>
-          </div>
-
-          <md-input-container flex>
-            <label data-translate="DETAILED_SEARCH_DESCRIPTION"></label>
-            <input data-ng-model="detailedSearch.combinedDescription"/>
-          </md-input-container>
-        </div>
-
-        <div flex>
-          <md-input-container flex>
-            <label>Haridustase</label>
-            <md-select data-ng-model="filter.education">
-              <md-option data-ng-repeat="education in filter.educations" value="{{education.value}}">
-                {{education.label}}
-              </md-option>
-            </md-select>
-          </md-input-container>
-          <md-input-container flex>
-            <label>Ainevaldkond</label>
-            <md-select data-ng-model="filter.area">
-              <md-option data-ng-repeat="area in areas" value="{{area.abbrev}}">
-                {{area.abbrev}}
-              </md-option>
-            </md-select>
-          </md-input-container>
-          <md-input-container flex>
-            <label>Teema</label>
-            <md-select data-ng-model="filter.topic">
-              <md-option data-ng-repeat="topic in topics" value="{{topic.abbrev}}">
-                {{topic.abbrev}}
-              </md-option>
-            </md-select>
-          </md-input-container>
-          <md-input-container flex>
-            <label>Alateema</label>
-            <md-select data-ng-model="filter.subtopic">
-              <md-option data-ng-repeat="subtopic in subtopics" value="{{subtopic.abbrev}}">
-                {{subtopic.abbrev}}
-              </md-option>
-            </md-select>
-          </md-input-container>
-        </div>
-
-        <div flex>
-          <md-input-container flex>
-            <label>Vanuserühm</label>
-            <md-select data-ng-model="filter.ageGroup">
-              <md-option data-ng-repeat="ageGroup in ageGroups" value="{{ageGroup.abbrev}}">
-                {{ageGroup.abbrev}}
-              </md-option>
-            </md-select>
-          </md-input-container>
-
-          <div layout="column" layout-align="end start" layout-fill>
-            <md-checkbox data-ng-model="filter.onlyFreeLiterature" aria-label="Ainult tasuta õppevara" flex>Ainult tasuta õppevara</md-checkbox>
-            <md-checkbox data-ng-model="filter.onlyEducationLiterature" aria-label="Ainult õppekirjandus" flex>Ainult õppekirjandus</md-checkbox>
-            <md-checkbox data-ng-model="filter.searchFromMaterials" aria-label="Otsi materjalidest" flex>Otsi materjalidest</md-checkbox>
-            <md-checkbox data-ng-model="filter.searchFromPortfolios" aria-label="Otsi kogumikest" flex>Otsi kogumikest</md-checkbox>
-          </div>
-        </div>
-      </div>
-
-    <div class="md-actions" layout="row" layout-sm="column" layout-align="end start" layout-padding>
-      <md-button>Tühista valikud</md-button>
-      <md-button type="submit" class="md-primary md-button" data-ng-click="search()" data-translate="DETAILED_SEARCH_SUBMIT"></md-button>
+<div layout="row" layout-sm="column">
+  <div flex>
+    <md-input-container flex>
+      <label data-translate="DETAILED_SEARCH_TITLE"></label>
+      <input data-ng-model="detailedSearch.title" />
+    </md-input-container>
+    <md-input-container flex>
+      <label data-translate="DETAILED_SEARCH_AUTHOR"></label>
+      <input data-ng-model="detailedSearch.author" />
+    </md-input-container>
+    <md-input-container flex>
+      <label data-translate="DETAILED_SEARCH_DESCRIPTION"></label>
+      <input data-ng-model="detailedSearch.combinedDescription"/>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Keel</label>
+      <md-select data-ng-model="filter.language">
+        <md-option data-ng-repeat="language in languages" value="{{language.value}}">
+          {{language.label}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <div layout="row">
+      <md-input-container flex>
+        <label>Alates</label>
+        <md-select data-ng-model="filter.yearFrom" flex>
+          <md-option data-ng-repeat="year in filter.years" value="{{year.value}}">
+            {{year.label}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container flex>
+        <label>Kuni</label>
+        <md-select data-ng-model="filter.yearTo" flex>
+          <md-option data-ng-repeat="year in filter.years" value="{{year.value}}">
+            {{year.label}}
+          </md-option>
+        </md-select>
+      </md-input-container>
     </div>
   </div>
-</form>
+
+  <div flex>
+    <md-input-container flex>
+      <label>Haridustase</label>
+      <md-select data-ng-model="filter.education">
+        <md-option data-ng-repeat="education in filter.educations" value="{{education.value}}">
+          {{education.label}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Ainevaldkond</label>
+      <md-select data-ng-model="filter.area">
+        <md-option data-ng-repeat="area in areas" value="{{area.abbrev}}">
+          {{area.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Teema</label>
+      <md-select data-ng-model="filter.topic">
+        <md-option data-ng-repeat="topic in topics" value="{{topic.abbrev}}">
+          {{topic.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Alateema</label>
+      <md-select data-ng-model="filter.subtopic">
+        <md-option data-ng-repeat="subtopic in subtopics" value="{{subtopic.abbrev}}">
+          {{subtopic.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+
+  <div flex>
+    <md-input-container flex>
+      <label>Vanuserühm</label>
+      <md-select data-ng-model="filter.ageGroup">
+        <md-option data-ng-repeat="ageGroup in ageGroups" value="{{ageGroup.abbrev}}">
+          {{ageGroup.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+
+    <div layout="column" layout-align="end start" layout-fill>
+      <md-checkbox data-ng-model="filter.onlyEducationLiterature" aria-label="Ainult õppekirjandus" flex>Ainult õppekirjandus</md-checkbox>
+      <md-checkbox data-ng-model="filter.onlyFreeLiterature" aria-label="Ainult tasuta õppevara" flex>Ainult tasuta õppevara</md-checkbox>
+      <md-checkbox data-ng-model="filter.searchFromMaterials" aria-label="Otsi materjalidest" flex>Otsi materjalidest</md-checkbox>
+      <md-checkbox data-ng-model="filter.searchFromPortfolios" aria-label="Otsi kogumikest" flex>Otsi kogumikest</md-checkbox>
+    </div>
+  </div>
+</div>
+
+<div class="md-actions" layout="row" layout-sm="column" layout-align="end start" layout-padding>
+  <md-button>Tühista valikud</md-button>
+  <md-button type="submit" class="md-primary md-button" data-ng-click="search()" data-translate="DETAILED_SEARCH_SUBMIT"></md-button>
+</div>

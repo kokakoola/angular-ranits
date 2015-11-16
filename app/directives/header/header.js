@@ -99,7 +99,6 @@ define(['app'], function(app)
                         return authenticatedUserService.getUser();
                     }, function(user) {
                         $scope.user = user;
-                        $('#dropdowned').collapse('hide');
                 }, true);
 
                 $scope.$watch(function () {

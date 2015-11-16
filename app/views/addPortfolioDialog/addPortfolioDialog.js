@@ -1,7 +1,7 @@
 define(['app'], function(app)
 {
-    app.controller('addPortfolioDialog', ['$scope', '$mdDialog', 'serverCallService',
-        function($scope, $mdDialog, serverCallService) {
+    app.controller('addPortfolioDialog', ['$scope', '$mdDialog', 'serverCallService', '$location',
+        function($scope, $mdDialog, serverCallService, $location) {
     		// get educational contexts
     		serverCallService.makeGet("rest/learningMaterialMetadata/educationalContext", {}, getEducationalContextSuccess, getEducationalContextFail);
 
@@ -24,6 +24,12 @@ define(['app'], function(app)
                 $mdDialog.hide();
             };
 
+            $scope.forward = function() {
+                $mdDialog.hide();
+
+                $location.path('/addPortfolio');
+            }
+
             $scope.portfolio = {
             	educationalContext: null,
 				educationLevelId: 0,
@@ -38,24 +44,4 @@ define(['app'], function(app)
             };
         }
     ]);
-
-    app.directive('dopAddPortfolio', [
-        function() {
-            return {
-                scope: true,
-                templateUrl: 'directives/addPortfolio/addPortfolio.html',
-                controller: function ($scope, $mdDialog) {
-
-                    $scope.ShowAddPortfolioDialog = function() {
-                        $mdDialog.show({
-                            controller: 'addPortfolioDialog',
-                            templateUrl: 'directives/addPortfolio/addPortfolioDialog.html'
-                        });
-                    };
-                }
-            };
-        }
-    ]);
-
-    return app;
 });

@@ -75,9 +75,9 @@
 
 <div class="md-toolbar-expandable" ng-show="showSearch">
   <md-toolbar class="md-hue-1">
-    <div class="md-toolbar-tools" layout-align="center center">
+    <div layout="row" layout-align="center center">
       <div flex-gt-md="80" flex="100">
-        <div layout="row" layout-align="center center">
+        <div class="md-toolbar-tools" layout="row" layout-align="center center">
           <md-button aria-label="Search" data-ng-click="search()" class="md-icon-button">
             <ng-md-icon icon="search"></ng-md-icon>
           </md-button>
@@ -99,6 +99,10 @@
   </md-toolbar>
 
   <div class="md-toolbar-filter" id="detailedSearch" ng-show="showFilter">
-    <div data-dop-detailed-search query-in="detailedSearch.queryIn" query-out="detailedSearch.queryOut"></div>
+   <form layout-align="center start" layout="row" layout-sm="column">
+      <div flex="100" flex-gt-md="80">
+        <div data-dop-detailed-search query-in="detailedSearch.queryIn" query-out="detailedSearch.queryOut"></div>
+      </div>
+    </form>
   </div>
 </div>

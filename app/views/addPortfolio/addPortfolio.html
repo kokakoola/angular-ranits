@@ -1,32 +1,34 @@
 <div id="page-add" layout="row" flex>
   <!-- Left sidenav -->
   <!-- ////////////////////////- -->
-  <md-sidenav layout="column" layout-fill  class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-include="'views/common/sidenav-left.html'">
+  <md-sidenav layout="column" layout-fill  class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <md-toolbar class="md-accent">
+      <h6 class="md-toolbar-tools md-subhead">
+        <md-button class="md-icon-button hide-gt-md" ng-click="toggleLeft()" >
+          <md-icon class="md-48">arrow_backward</md-icon>
+        </md-button>
+        Koostan kogumikku:
+      </h6>
+    </md-toolbar>
+    <md-list>
+      <h6 class="md-subhead">Matemaatika õpik üheksandale klassile</h6>
+      <md-item ng-repeat="item in menu">
+        <a>
+          <md-item-content md-ink-ripple layout="row" layout-align="start center">
+            <div>
+              {{item.title}}
+            </div>
+          </md-item-content>
+        </a>
+      </md-item>
+    </md-list>
   </md-sidenav>
 
   <!-- Rest of content -->
   <!-- ////////////////////////- -->
   <div class="content-wrap" layout="column" flex>
-    <div ng-include="'views/common/toolbar-add.html'" ng-controller="DialogCtrl"></div>
+    <div id="navmenu" data-portfolio-header></div>
     <section layout="row" layout-align="start start" ng-cloak>
-
-      <!-- FAB published (temporary)-->
-      <!-- ////////////////////////- -->
-      <md-fab-speed-dial md-direction="up" class="md-fling md-fab-bottom-right">
-        <md-fab-trigger>
-          <md-button aria-label="menu" class="md-fab md-primary">
-            <ng-md-icon icon="visibility"></ng-md-icon>
-          </md-button>
-        </md-fab-trigger>
-        <md-fab-actions>
-          <md-button aria-label="Unpupblished" class="md-fab md-raised md-mini">
-            <ng-md-icon icon="visibility_off"></ng-md-icon>
-          </md-button>
-          <md-button aria-label="Share link" class="md-fab md-raised md-mini">
-            <ng-md-icon icon="link"></ng-md-icon>
-          </md-button>
-        </md-fab-actions>
-      </md-fab-speed-dial>
 
       <!-- Middle content -->
       <!-- ////////////////////////- -->
@@ -108,7 +110,7 @@
           </div>
         </div>
 
-        <div ng-include="'views/common/aside-right.html'" class="md-padding" flex="25" flex-sm="100"></div>
+        <div data-dop-sidebar flex="25" flex-sm="100" class="md-padding" role="sidebar"></div>
       </article>
     </section>
   </div>

@@ -53,6 +53,13 @@ define([], function()
                     'directives/materialBox/materialBox'
                 ]
             },
+            '/addPortfolio': {
+                templateUrl: 'views/addPortfolio/addPortfolio.html',
+                controller: 'addPortfolioController',
+                dependencies: [
+                    'views/addPortfolio/addPortfolio'
+                ]
+            },
             '/loginRedirect': {
                 templateUrl: 'views/loginRedirect/loginRedirect.html',
                 controller: 'loginRedirectController',
